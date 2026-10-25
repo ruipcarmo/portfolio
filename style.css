@@ -137,16 +137,16 @@ html {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Light green box standing in for a future project image */
+/* Project screenshot: fills the card width, never wider, same 16/10 shape as before */
 .card-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
-  background: #dde9e2;
-  color: var(--color-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 600;
+  object-fit: cover;
+  object-position: left top; /* keeps each site's headline readable */
+  background: #dde9e2; /* light green shows while the image loads */
 }
 
 .card-body {
