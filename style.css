@@ -122,6 +122,7 @@ html {
 }
 
 .card {
+  position: relative; /* lets the link's invisible layer cover the whole card */
   background: var(--color-bg);
   border-radius: 16px;
   overflow: hidden; /* keeps the image inside the rounded corners */
@@ -171,14 +172,37 @@ html {
   flex: 1;
 }
 
+/* min-height gives a 44px tap target; the negative margins keep the spacing as before */
 .card-body a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin: -9px 0;
   color: var(--color-accent);
   font-weight: 600;
   text-decoration: none;
 }
 
-.card-body a:hover {
+/* Invisible layer over the whole card, so a click anywhere opens the project */
+.card-body a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+}
+
+.card:hover .card-body a {
   text-decoration: underline;
+}
+
+/* Keyboard users see the outline around the whole card */
+.card-body a:focus-visible {
+  outline: none;
+}
+
+.card-body a:focus-visible::after {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px; /* drawn inside, since the card hides anything outside it */
 }
 
 /* Tablets and phones: one card per row */
