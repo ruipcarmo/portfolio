@@ -22,16 +22,42 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+  <!-- Second typeface, only for the italic words in the headline -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- 1. HERO: the first thing visitors see -->
   <header class="hero">
-    <div class="container">
-      <h1>Rui Carmo</h1>
-      <p class="tagline">Learning to build with AI, one project at a time.</p>
-      <a class="button" href="#projects">See my projects</a>
+    <div class="container hero-grid">
+
+      <div class="hero-text">
+        <p class="eyebrow">Rui Carmo · AI for businesses of every kind</p>
+        <h1>Save time. <em>Stay ahead.</em></h1>
+        <p class="tagline">I help businesses of every kind save time and work smarter with AI, so they stay competitive.</p>
+
+        <div class="hero-actions">
+          <a class="button" href="#contact">Get in touch</a>
+          <a class="button button-ghost" href="#projects">See my projects</a>
+        </div>
+
+        <ul class="hero-facts">
+          <li><strong>3</strong> websites built</li>
+          <li><strong>30</strong> years explaining things simply</li>
+        </ul>
+      </div>
+
+      <!-- Real work instead of a stock photo: the three project screenshots -->
+      <a class="hero-shots" href="#projects" aria-label="See my projects">
+        <img src="images/muralha.webp" alt="" class="shot shot-1">
+        <img src="images/fitness.webp" alt="" class="shot shot-2">
+        <img src="images/bakery.webp" alt="" class="shot shot-3">
+      </a>
+
     </div>
   </header>
 

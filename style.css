@@ -56,41 +56,149 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Green block that fills most of the screen, text centred in the middle */
+/* Light background so green is kept for buttons only; text aligned left */
 .hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 0;
-  background: var(--color-accent);
-  color: #ffffff;
-  text-align: center;
+  padding: 72px 0 88px;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid #e2e8e3;
 }
 
+/* Two columns on a computer: words on the left, project screenshots on the right */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Small line above the headline: who I am and what I do */
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* The promise: the biggest text on the page */
 .hero h1 {
-  font-size: clamp(2.8rem, 8vw, 5rem); /* grows with the screen, between these sizes */
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   margin-bottom: 20px;
 }
 
-.tagline {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  max-width: 560px;
-  margin: 0 auto 48px;
-  opacity: 0.9;
-}
-
-/* White button with green text, only inside the hero */
-.hero .button {
-  background: #ffffff;
+/* The italic words use the second typeface */
+.hero h1 em {
+  display: block;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--color-accent);
-  padding: 14px 32px;
 }
 
-.hero .button:hover {
-  background: var(--color-bg-alt);
+.tagline {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--color-muted);
+  max-width: 34ch;
+  margin: 0 0 32px;
+}
+
+/* Main button in green (the action colour), second button with outline only */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid #b9c4bd;
+}
+
+.button-ghost:hover {
+  background: transparent;
+  border-color: var(--color-text);
+}
+
+/* Two facts as proof, close to the buttons */
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #dfe6e1;
+  font-size: 0.98rem;
+  color: var(--color-muted);
+}
+
+.hero-facts strong {
+  font-size: 1.35rem;
+  color: var(--color-text);
+  margin-right: 4px;
+}
+
+/* Three screenshots stacked like photos on a table */
+.hero-shots {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 0.9;
+}
+
+.shot {
+  position: absolute;
+  width: 78%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #dfe6e1;
+  box-shadow: 0 14px 34px -14px rgba(31, 42, 36, 0.35);
+  transition: transform 0.25s;
+}
+
+.shot-1 { top: 0;   right: 0;   transform: rotate(2deg); }
+.shot-2 { top: 30%; left: 0;    transform: rotate(-2.5deg); }
+.shot-3 { bottom: 0; right: 6%; transform: rotate(1deg); }
+
+.hero-shots:hover .shot-1 { transform: rotate(3deg) translateY(-4px); }
+.hero-shots:hover .shot-2 { transform: rotate(-3.5deg) translateY(-4px); }
+.hero-shots:hover .shot-3 { transform: rotate(2deg) translateY(-4px); }
+
+/* Phones: one column, buttons full width, screenshots below */
+@media (max-width: 800px) {
+  .hero {
+    padding: 40px 0 56px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero .button {
+    width: 100%;
+  }
+
+  .hero-shots {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 /* ===== Shared section spacing ===== */
