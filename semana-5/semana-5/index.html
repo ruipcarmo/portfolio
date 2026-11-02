@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 5 — UI/UX audits</title>
+<style>
+:root{--ink:#1F2A24;--muted:#5B6660;--line:#DDE3DF;--bg:#FAFAF7;--card:#FFFFFF;--accent:#2F6B4F;--accent-ink:#FFFFFF;
+--high-bg:#F8D7D3;--high:#8A1F12;--med-bg:#FCEBC7;--med:#7A4A00;--low-bg:#E3EEDF;--low:#2F5A23}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px}
+.kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0 0 8px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 16px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:62ch}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+nav a,.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--card)}
+.btn{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+h2{font-size:24px;margin:48px 0 16px;padding-top:8px;border-top:2px solid var(--ink)}
+.cross li{margin-bottom:12px}
+.clinic{margin-top:40px}
+h3{font-size:22px;margin:0 0 8px}
+.url{font-weight:400;color:var(--muted);font-size:16px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);font-size:14px;margin:0 0 12px}
+.stats span:first-child{color:var(--ink);font-weight:600}
+.pattern{margin:0 0 20px;max-width:65ch}
+.f{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.f h4{font-size:17px;line-height:1.4;margin:8px 0 10px}
+.f p{margin:0 0 8px;font-size:15px}
+.f p b{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px}
+.n{font-weight:700;color:var(--muted);min-width:20px}
+.cat{color:var(--muted)}
+.sev{padding:2px 10px;border-radius:999px;font-weight:600}
+.sev.high{background:var(--high-bg);color:var(--high)}.sev.med{background:var(--med-bg);color:var(--med)}.sev.low{background:var(--low-bg);color:var(--low)}
+details{margin:16px 0}
+summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted);font-weight:600}
+details .f{opacity:.8}
+.strengths{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin-top:16px}
+.strengths h4{margin:0 0 6px} .strengths ul{margin:0;padding-left:20px}
+
+.shot{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 16px;background:var(--card)}.shot img{display:block;width:100%;height:auto}
+.soon{color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center}
+footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<p class="kicker">Week 5 · UI/UX</p>
+<h1>Three physiotherapy clinic websites in Viseu, audited</h1>
+<p class="lead">10 confirmed findings per site, each backed by a number or a test I ran myself, plus the candidates I dropped and what each site does well. Then the hero I redesigned and my agency's style guide.</p>
+<nav><a href="#patterns">Patterns</a><a href="#fysio">Clínica Fysio</a><a href="#fisioprime">FisioPrime</a><a href="#carolina">Carolina Aparício</a><a href="#hero">Hero redesign</a><a href="#style">Style guide</a><a class="btn" href="/semana-5/week5-ui-audits.xlsx" download>Download spreadsheet</a></nav>
+</header>
+<main>
+<section id="patterns"><h2>Patterns across the three sites</h2><ol class="cross"><li>None of the three clinics shows its Google rating near the top of the page (Clínica Fysio 5.0★ · 35 reviews; FisioPrime 4.9★ · 10; Carolina Aparício 4.9★ · 64) — their strongest trust signal is invisible.</li><li>None has a hero with one clear promise and a &#x27;Book&#x27; button: one says &#x27;Início&#x27; (Home), one says &#x27;Criamos Campeões&#x27; (We create champions) with an &#x27;About us&#x27; button, and one rotates three messages.</li><li>The two sites I timed are heavy on first load — FisioPrime 2.2 MB / 3.1 s, Carolina Aparício 3.4 MB / 3.6 s; my own portfolio, measured from the same connection, is 136 KB / ~0.5 s.</li></ol>
+<p class="stats"><span>Benchmark: movimente.pt</span><span>Measured 01–02/11/2026</span><span>Mobile at 375 × 812</span></p></section>
+<h2 id="audits">Audits</h2>
+<section class="clinic" id="fysio">
+<h3>Clínica Fysio <span class="url">clinicafysio.com</span></h3>
+<p class="stats"><span>10 confirmed</span><span>4 high · 5 medium · 1 low</span><span>1 dropped</span></p>
+<p class="pattern">The site looks unmaintained since early 2023 (reviews and &#x27;News&#x27; both stop there), while the clinic is active on Google (5.0★, 35 reviews). The booking form fails silently, and the home page&#x27;s main text links to an online pharmacy&#x27;s sales page.</p>
+<article class="f">
+<div class="meta"><span class="n">1</span><span class="sev high">High</span><span class="cat">Hierarchy</span></div>
+<h4>The two largest texts on the first screen are the name &#x27;Clínica Fysio&#x27; and &#x27;Início&#x27; (Home) — neither says what the clinic offers or makes a promise</h4>
+<p><b>Evidence</b> &#x27;Clínica Fysio&#x27; 46 px; &#x27;Início&#x27; 34 px; no offer statement on the first screen. The first sentence that says what they do and where (&#x27;Marcações abertas. Fisioterapia, Osteopatia…&#x27; [Bookings open. Physiotherapy, Osteopathy…]) sits in the &#x27;Novidades&#x27; (News) section, only on the 2nd screen at 375 × 812.</p>
+<p class="how"><b>How measured</b> Selection tool (Ctrl+Shift+C) → Font line</p>
+<p><b>Fix idea</b> Keep the name in the logo, but replace &#x27;Início&#x27; with a clear promise, e.g. &#x27;Physiotherapy in Viseu to get you moving again without pain&#x27;, with a &#x27;Book an assessment&#x27; button right below.</p></article>
+<article class="f">
+<div class="meta"><span class="n">2</span><span class="sev high">High</span><span class="cat">Hierarchy</span></div>
+<h4>The opening text is a generic welcome, followed by a paragraph about a medicine that links to a sales page on an online pharmacy</h4>
+<p><b>Evidence</b> 3 paragraphs on the first screen: welcome, invitation to see other pages, and 100 words about a medicine with a link to an online pharmacy&#x27;s sales page. None says what they treat or how to book. At 375 px this block is 491 px tall (more than half of an 812 px screen).</p>
+<p class="how"><b>How measured</b> Read as a first-time visitor; word count (Word); selection tool on the text block at 375 px</p>
+<p><b>Fix idea</b> Replace with two sentences on what they treat and for whom, followed by a &#x27;Book an assessment&#x27; button; move the medicine paragraph to an FAQ page.</p></article>
+<article class="f">
+<div class="meta"><span class="n">3</span><span class="sev high">High</span><span class="cat">Trust</span></div>
+<h4>The main text of the home page links to the sales page of a prescription-only medicine on an online pharmacy unrelated to the clinic</h4>
+<p><b>Evidence</b> &#x27;Flexiban&#x27; link → farmaciaamparo.pt/flexiban/: page with prices and an &#x27;Adicionar Carrinho&#x27; (Add to cart) button; the page states the medicine requires a prescription.</p>
+<p class="how"><b>How measured</b> Hover the link and open the destination</p>
+<p><b>Fix idea</b> Remove the link; if the information is useful, move it to an FAQ page without commercial links.</p></article>
+<article class="f">
+<div class="meta"><span class="n">4</span><span class="sev high">High</span><span class="cat">Call to action</span></div>
+<h4>The booking form doesn&#x27;t send the request: it only tries to open the visitor&#x27;s email program; if none opens, it still shows &#x27;Thank you&#x27;, and the request is lost</h4>
+<p><b>Evidence</b> Form filled with made-up test data (01/11/2026): message &#x27;Obrigado. O seu programa de e-mail vai abrir…&#x27; (Thank you. Your email program will open…), but no program opened on this computer. The form&#x27;s destination is &#x27;mailto:clinica.fysioss@gmail.com&#x27; (read in the Console).</p>
+<p class="how"><b>How measured</b> Console: [...document.forms].map(f =&gt; f.action); test with made-up data, without sending</p>
+<p><b>Fix idea</b> A form that actually delivers the request to the clinic; or replace it with a WhatsApp button with a pre-filled message.</p></article>
+<article class="f">
+<div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
+<h4>Google reviews appear only at the bottom of the home page, with no average or total, and stop in March 2023 — the site doesn&#x27;t show recent reviews</h4>
+<p><b>Evidence</b> &#x27;Críticas&#x27; (Reviews) section only at the bottom of the home page (4 space-bar presses at 375 × 812). 6 Google reviews, all from 2023 (latest: 24/03/2023), no average or total. Google Maps: 5.0★, 35 reviews, latest 2 months ago (checked 01/11/2026).</p>
+<p class="how"><b>How measured</b> Scroll the home page to the end; Google Maps → Reviews → Sort → Newest</p>
+<p><b>Fix idea</b> Show the Google average and total near the top (e.g. &#x27;5.0★ · 35 Google reviews&#x27;) and use a reviews widget that updates by itself.</p></article>
+<article class="f">
+<div class="meta"><span class="n">6</span><span class="sev med">Medium</span><span class="cat">Call to action</span></div>
+<h4>The booking button has no prominence: on desktop it is on the first screen but small, in a side column; on mobile it only appears on the 2nd screen, inside &#x27;Novidades&#x27; (News)</h4>
+<p><b>Evidence</b> Desktop: &#x27;Pedir marcação&#x27; (Request booking) in the side column, 30 px tall, 14 px font. At 375 × 812: first booking button only after 2 space-bar presses, in the &#x27;Novidades&#x27; section (50 px, 16 px font; phone and WhatsApp 48 px, 15 px font — sizes OK). Leads to the &#x27;Marcações&#x27; (Bookings) page (phone, WhatsApp, email and form).</p>
+<p class="how"><b>How measured</b> Selection tool (desktop and 375 × 812); count space-bar presses; click the button to see where it goes</p>
+<p><b>Fix idea</b> One prominent &#x27;Book an assessment&#x27; button in the hero, visible without scrolling on mobile.</p></article>
+<article class="f">
+<div class="meta"><span class="n">7</span><span class="sev med">Medium</span><span class="cat">Images</span></div>
+<h4>The home page has no photographs at all — not of the clinic, the team or treatments; only logo, icons and text</h4>
+<p><b>Evidence</b> 0 photographs on the home page, top to footer, on desktop and at 375 × 812 (01/11/2026). Reviews use initials instead of photos, and &#x27;O nosso Espaço&#x27; (Our space) uses an icon. The clinic&#x27;s Google listing does have photos; the site has none.</p>
+<p class="how"><b>How measured</b> Scroll the home page to the footer, on desktop and at 375 × 812</p>
+<p><b>Fix idea</b> A real photo of the team or the space in the hero; the clinic&#x27;s Google listing already has photos that could be used, with permission.</p></article>
+<article class="f">
+<div class="meta"><span class="n">8</span><span class="sev med">Medium</span><span class="cat">Mobile</span></div>
+<h4>The &#x27;back to top&#x27; arrow is fixed in the bottom-right corner and covers the phone button; tapping there scrolls to the top instead of calling</h4>
+<p><b>Evidence</b> At 375 × 812, with the &#x27;924426777&#x27; button under the arrow, a click on the overlapping area scrolled the page to the top (tested 01/11/2026).</p>
+<p class="how"><b>How measured</b> Selection tool on the arrow and the button; test click on the overlapping area</p>
+<p><b>Fix idea</b> Move the arrow up or hide it near the contact buttons; or remove it, as it is barely needed on mobile.</p></article>
+<article class="f">
+<div class="meta"><span class="n">9</span><span class="sev med">Medium</span><span class="cat">Trust</span></div>
+<h4>The &#x27;Novidades&#x27; (News) menu leads to an archive frozen in February 2023, with old promotions still asking for immediate action</h4>
+<p><b>Evidence</b> 4 posts, all dated 23/02/2023; the page itself says the posts were published in February 2023. Copy such as &#x27;Inscreva-se já, não perca esta oportunidade&#x27; (Sign up now, don&#x27;t miss this opportunity). Typo in a title: &#x27;Dermaplanig&#x27;. Pattern: reviews and blog both stop in early 2023.</p>
+<p class="how"><b>How measured</b> &#x27;Novidades&#x27; menu → check the dates of all posts</p>
+<p><b>Fix idea</b> Rename to &#x27;Articles&#x27; or remove from the menu; or publish one news item a month. Fix the typo.</p></article>
+<article class="f">
+<div class="meta"><span class="n">10</span><span class="sev low">Low</span><span class="cat">Trust</span></div>
+<h4>The contact email is @gmail.com instead of the clinic&#x27;s own domain</h4>
+<p><b>Evidence</b> clinica.fysioss@gmail.com, in the &#x27;Contactos&#x27; box and on the &#x27;Marcações&#x27; page. The site has its own domain (clinicafysio.com) but the email doesn&#x27;t use it. The double &#x27;s&#x27; makes it easy to mistype.</p>
+<p class="how"><b>How measured</b> Check the &#x27;Contactos&#x27; box and the &#x27;Marcações&#x27; page</p>
+<p><b>Fix idea</b> Create an address on the clinic&#x27;s own domain (e.g. geral@clinicafysio.com) and forward it to the current Gmail, so nothing changes day to day.</p></article>
+<details><summary>1 dropped candidate — tested, did not hold up</summary>
+<article class="f">
+<div class="meta"><span class="n">11</span><span class="cat">Mobile</span></div>
+<h4>The menu has 10 items — probably cramped or hidden on mobile</h4>
+<p><b>Evidence</b> At 375 × 812 the menu sits behind a ☰ button (42.4 × 42.4 px) and opens as a list of 9 items, each 42.4 px tall (close to 44); no horizontal scroll.</p>
+<p class="how"><b>How measured</b> Device mode 375 × 812; open ☰; selection tool on the button and an item; try scrolling sideways</p>
+</article>
+</details>
+<div class="strengths"><h4>Strengths</h4><ul><li>Working mobile menu: ☰ button and items 42 px, no horizontal scroll</li><li>Address, phone and WhatsApp visible on the first screen (desktop)</li><li>Clear &#x27;Marcações&#x27; (Bookings) page with 4 channels: phone, WhatsApp, email, form</li><li>Mobile booking buttons 48–50 px tall</li><li>&#x27;Pedir marcação&#x27; button contrast 5.47 (passes AA)</li></ul></div>
+</section><section class="clinic" id="fisioprime">
+<h3>FisioPrime <span class="url">fisioprime.pt</span></h3>
+<p class="stats"><span>10 confirmed</span><span>1 high · 7 medium · 2 low</span><span>2 dropped</span></p>
+<p class="pattern">A modern, well-ranked site (4th organic result for &#x27;fisioterapia Viseu&#x27; on Google Maps) whose hero doesn&#x27;t say what the clinic does: its main button leads away from booking, which takes 3 clicks. Opening hours differ from Google, and service photos are stock images.</p>
+<article class="f">
+<div class="meta"><span class="n">1</span><span class="sev high">High</span><span class="cat">Hierarchy</span></div>
+<h4>The first screen doesn&#x27;t say what the clinic does or where: the headline &#x27;Criamos Campeões&#x27; (We create champions) doesn&#x27;t mention physiotherapy, and the location (Viseu) doesn&#x27;t appear anywhere, not even in small print</h4>
+<p><b>Evidence</b> h1 &#x27;Criamos Campeões&#x27;: 102 px at 1272 px width (desktop) and 46 px at 375 × 812. At neither width do the words &#x27;fisioterapia&#x27; (physiotherapy) or &#x27;Viseu&#x27; appear on the first screen; the only other text is the &#x27;Sobre nós&#x27; (About us) button.</p>
+<p class="how"><b>How measured</b> Read the first screen without scrolling (1272 px and 375 × 812); selection tool on the headline → Font line; width with window.innerWidth</p>
+<p><b>Fix idea</b> A short headline saying what they do and for whom; below it, in small print, the location next to the booking button (e.g. &#x27;Quinta da Alagoa, Viseu&#x27;).</p></article>
+<article class="f">
+<div class="meta"><span class="n">2</span><span class="sev med">Medium</span><span class="cat">Call to action</span></div>
+<h4>The hero&#x27;s main button is &#x27;Sobre nós&#x27; (About us — read) instead of &#x27;Book&#x27; (act), and booking is hidden on the &#x27;Contactos&#x27; page</h4>
+<p><b>Evidence</b> The only hero button is &#x27;Sobre nós&#x27;, on desktop (1272 px) and at 375 × 812. No booking button or link on the first screen or in the menu. Booking exists — a full form on the &#x27;Contactos&#x27; page (service, date, time) — but from the hero button it takes 3 clicks: &#x27;Sobre nós&#x27; → &#x27;contactar&#x27; → form. The page&#x27;s 4 buttons have 4 different labels (&#x27;Sobre nós&#x27;, &#x27;Conheça toda a equipa&#x27;, &#x27;Contactar&#x27;, &#x27;Sobre Nós&#x27;) and none says &#x27;Book&#x27;. Only contact route on the first screen: the floating WhatsApp icon.</p>
+<p class="how"><b>How measured</b> Read the first screen at both widths; open the ☰ menu; follow the button&#x27;s path to the form</p>
+<p><b>Fix idea</b> Main button &#x27;Book an assessment&#x27; going straight to the form; &#x27;About us&#x27; as a secondary link.</p></article>
+<article class="f">
+<div class="meta"><span class="n">3</span><span class="sev med">Medium</span><span class="cat">Call to action</span></div>
+<h4>The floating WhatsApp icon sits on top of the &#x27;Sobre nós&#x27; button and the cookie-settings button; tapping the covered area opens WhatsApp instead</h4>
+<p><b>Evidence</b> In a 1272 × 644 px window, the WhatsApp icon covers part of the &#x27;Sobre nós&#x27; button and the &#x27;Preferências de cookies&#x27; (Cookie settings) button; a click on the covered area opened WhatsApp (tested 02/11/2026). In an 800 px-tall window there is no overlap. At 375 × 812, the icons cover the &#x27;Quem Somos.&#x27; (Who we are) heading.</p>
+<p class="how"><b>How measured</b> Normal window without DevTools; test click on the covered area; window.innerWidth and window.innerHeight</p>
+<p><b>Fix idea</b> Move the WhatsApp icon to the bottom-right corner, away from the main button and the cookie button.</p></article>
+<article class="f">
+<div class="meta"><span class="n">4</span><span class="sev med">Medium</span><span class="cat">Images</span></div>
+<h4>The service photos are stock images, not of the clinic (the hero photo could not be confirmed)</h4>
+<p><b>Evidence</b> The &#x27;Fisioterapia&#x27; service photo (file &#x27;medico-cola-uma-tenda-em-um-atleta-no-hospital_1157-28745.jpg&#x27;) appears on Google Images on the stock site Magnific. The same naming pattern appears in at least 4 other service photos (02/11/2026).</p>
+<p class="how"><b>How measured</b> Console: list image file names; search the name on Google Images</p>
+<p><b>Fix idea</b> Real photos of treatments at the clinic; the team photos (real) already show the way.</p></article>
+<article class="f">
+<div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
+<h4>The site shows only 2 testimonials, with no stars, date or source, far down the page; the 4.9★ Google rating doesn&#x27;t appear</h4>
+<p><b>Evidence</b> 2 testimonials on the home page, 9 space-bar presses down at 375 × 812, with no stars, date or source, both with the same generic avatar. Google Maps: 4.9★, 10 reviews, latest one week ago (02/11/2026).</p>
+<p class="how"><b>How measured</b> Scroll the home page at 375 × 812 counting space-bar presses; Google Maps → Reviews → Sort → Newest</p>
+<p><b>Fix idea</b> Show &#x27;4.9★ on Google&#x27; next to the booking button on the first screen; use real Google reviews with name and date.</p></article>
+<article class="f">
+<div class="meta"><span class="n">6</span><span class="sev med">Medium</span><span class="cat">Speed</span></div>
+<h4>The home page is heavy and slow: about 100 files and 2.2 MB, taking over 3 seconds to load</h4>
+<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 100 requests, 2.2 MB, Load 3.14 s (2.92 / 3.14 / 3.40 s). Breakdown: images 647 KB (34 requests), scripts 621 KB (22), styles 528 KB (34), fonts 191 KB (6) — of which 161 KB are two icon libraries (Font Awesome) loaded for a few symbols; Poppins itself is only ~32 KB. The video does not load on entry. For comparison, from the same connection: my portfolio is 136 KB and loads in ~0.5 s.</p>
+<p class="how"><b>How measured</b> Network → Ctrl+Shift+R × 3 → &#x27;resources&#x27; and &#x27;Load&#x27; (not &#x27;Finish&#x27;, which includes requests made after the page is ready); Img/JS/CSS/Font filters</p>
+<p><b>Fix idea</b> Weight is spread out: compress images (WebP), remove unused plugins to cut scripts and styles, and merge the 34 style files into a few; target under 1 MB and under 50 requests.</p></article>
+<article class="f">
+<div class="meta"><span class="n">7</span><span class="sev med">Medium</span><span class="cat">Accessibility</span></div>
+<h4>Almost half the images have no alt text, including the logo, the team photos and the service photos</h4>
+<p><b>Evidence</b> 24 of 50 images on the home page have no alt text (Console, 02/11/2026), including the logo, 6 team photos (e.g. &#x27;Fisio_Gustavo.png&#x27;, &#x27;Fisio_Silvana.png&#x27;) and about 10 service photos.</p>
+<p class="how"><b>How measured</b> Console: count images without &#x27;alt&#x27; and list their file names</p>
+<p><b>Fix idea</b> Describe every meaningful photo (e.g. &#x27;Physiotherapist Gustavo treating an athlete&#x27;s knee&#x27;); leave only decorative images empty.</p></article>
+<article class="f">
+<div class="meta"><span class="n">8</span><span class="sev med">Medium</span><span class="cat">Trust</span></div>
+<h4>Opening hours on the site and on Google Maps don&#x27;t match</h4>
+<p><b>Evidence</b> Site (footer): Mon–Fri 8:00–13:00 and 14:00–21:00; Saturday 8:00–13:00. Google Maps: Mon–Fri 8:00–20:00; Saturday and Sunday closed (02/11/2026). They differ in closing time, lunch break and Saturday.</p>
+<p class="how"><b>How measured</b> Compare the site&#x27;s hours with the Google Maps listing</p>
+<p><b>Fix idea</b> Confirm the real hours with the clinic and update both places at the same time.</p></article>
+<article class="f">
+<div class="meta"><span class="n">9</span><span class="sev low">Low</span><span class="cat">Typography</span></div>
+<h4>The headline&#x27;s key word (&#x27;Campeões&#x27;) is set in hollow, outline-only letters over a photo and reads worse than the rest of the headline</h4>
+<p><b>Evidence</b> &#x27;Campeões&#x27; has a 2 px outline and a transparent fill (rgba(0, 0, 0, 0)) over a green photo; 102 px on desktop, 46 px at 375 × 812. &#x27;Criamos&#x27;, in solid letters, reads better next to it (02/11/2026).</p>
+<p class="how"><b>How measured</b> Console: webkitTextStrokeWidth and color of the &#x27;.stroke&#x27; element; visual comparison at 375 × 812</p>
+<p><b>Fix idea</b> Solid letters for the whole headline; if they keep the effect, darken the photo behind the text.</p></article>
+<article class="f">
+<div class="meta"><span class="n">10</span><span class="sev low">Low</span><span class="cat">Trust</span></div>
+<h4>Unproofed text on the &#x27;Contactos&#x27; page: a typo in the official licence line and English-style capitalised headings</h4>
+<p><b>Evidence</b> &#x27;Cetidão de registo&#x27; (instead of &#x27;Certidão&#x27;, certificate) in the licences line. Headings &#x27;Junte-se A Nós&#x27; and &#x27;Esclareça As Suas Dúvidas&#x27; capitalise every word, which is not standard in Portuguese (checked 02/11/2026).</p>
+<p class="how"><b>How measured</b> Read the &#x27;Contactos&#x27; page</p>
+<p><b>Fix idea</b> Proofread: fix &#x27;Certidão&#x27; and capitalise only the first word of headings.</p></article>
+<details><summary>2 dropped candidates — tested, did not hold up</summary>
+<article class="f">
+<div class="meta"><span class="n">11</span><span class="cat">Spacing &amp; alignment</span></div>
+<h4>&#x27;Contactos&#x27; (Contacts) drops to a second line in the desktop menu</h4>
+<p><b>Evidence</b> Dragging the window from 1272 px down to 1020 px (where the ☰ appears), &#x27;Contactos&#x27; always stayed on the same line (02/11/2026). Not reproduced; an earlier screenshot showing the wrap was probably taken with browser zoom above 100%.</p>
+<p class="how"><b>How measured</b> Restore the window, drag its edge and read window.innerWidth</p>
+</article>
+<article class="f">
+<div class="meta"><span class="n">12</span><span class="cat">Findability / SEO</span></div>
+<h4>The clinic is hard to find on Google Maps by searching &#x27;FisioPrime&#x27;</h4>
+<p><b>Evidence</b> On Google Maps, searching &#x27;FisioPrime&#x27; opens the &#x27;FisioPrime Viseu&#x27; listing directly. Searching &#x27;fisioterapia Viseu&#x27; on Google Maps (private window, 02/11/2026), it ranks 5th — 4th excluding the paid ad.</p>
+<p class="how"><b>How measured</b> Google Maps in a private window: search the name; search &#x27;fisioterapia Viseu&#x27; and count the position</p>
+</article>
+</details>
+<div class="strengths"><h4>Strengths</h4><ul><li>One font family (Poppins), in 4 weights, across the whole site</li><li>The video does not load on entry (only on play)</li><li>Email on the clinic&#x27;s own domain (geral@fisioprime.pt)</li><li>A real booking form on the &#x27;Contactos&#x27; page (service, sub-service, date, time)</li><li>Main headline correctly marked as h1</li><li>Well ranked on Google Maps: 4th organic result for &#x27;fisioterapia Viseu&#x27;</li><li>Buttons always in the same colour (green), except in the hero, where the button is white to stand out from the green background</li></ul></div>
+</section><section class="clinic" id="carolina">
+<h3>Carolina Aparício <span class="url">carolinaaparicio.pt</span></h3>
+<p class="stats"><span>10 confirmed</span><span>0 high · 8 medium · 2 low</span><span>2 dropped</span></p>
+<p class="pattern">The best booking experience of the three — a &#x27;Marcações&#x27; (Bookings) button always visible and a clear 3-step pre-booking — but the heaviest page (3.4 MB), 4 font families, a rotating hero with a generic message, and small tap targets on mobile.</p>
+<article class="f">
+<div class="meta"><span class="n">1</span><span class="sev med">Medium</span><span class="cat">Hierarchy</span></div>
+<h4>The hero is a carousel that changes every 5 s, with 3 different messages instead of one promise; the 1st, which everyone sees, is generic and has no button</h4>
+<p><b>Evidence</b> 3 slides rotating automatically every 5 s: &#x27;Cuide de si, Cuide da sua Saúde / Fisioterapia&#x27; (Look after yourself, look after your health / Physiotherapy — no button), &#x27;Tratamentos Inovadores / Tecarterapia&#x27; (Innovative treatments / Tecar therapy — &#x27;Saber mais&#x27;, Learn more), &#x27;Pilates Clínico / Grupo ou Individual&#x27; (Clinical Pilates / Group or individual — &#x27;Saber mais&#x27;). The 1st is the one shown when the page opens, on desktop and at 375 × 812 (02/11/2026).</p>
+<p class="how"><b>How measured</b> Watch the carousel without touching it, counting seconds; read each slide&#x27;s texts and buttons</p>
+<p><b>Fix idea</b> One fixed image with a clear promise (e.g. &#x27;Physiotherapy in Viseu to live without pain&#x27;) and a &#x27;Book a consultation&#x27; button; services move to the next section.</p></article>
+<article class="f">
+<div class="meta"><span class="n">2</span><span class="sev med">Medium</span><span class="cat">Mobile</span></div>
+<h4>In the booking form, the treatment options are very small tap targets</h4>
+<p><b>Evidence</b> At 375 × 812, each option (radio button + word, &#x27;label&#x27;) is 14 px tall — minimum 44; 14 px font. Tapping the word selects the option (good), but the area is still low. &#x27;Seguinte&#x27; (Next) button: 40 px, close to 44 (02/11/2026).</p>
+<p class="how"><b>How measured</b> Selection tool on an option&#x27;s &#x27;label&#x27; and on the &#x27;Seguinte&#x27; button at 375 × 812; tap test on the word</p>
+<p><b>Fix idea</b> Turn each option into a wide button at least 44 px tall (the padding becomes part of the tap area).</p></article>
+<article class="f">
+<div class="meta"><span class="n">3</span><span class="sev med">Medium</span><span class="cat">Findability / SEO</span></div>
+<h4>The home page has no h1 (main heading)</h4>
+<p><b>Evidence</b> document.querySelectorAll(&#x27;h1&#x27;).length = 0 (02/11/2026); the carousel headings are not marked as the main heading.</p>
+<p class="how"><b>How measured</b> Console: count h1 elements</p>
+<p><b>Fix idea</b> Mark the hero promise as the page&#x27;s single h1.</p></article>
+<article class="f">
+<div class="meta"><span class="n">4</span><span class="sev med">Medium</span><span class="cat">Typography</span></div>
+<h4>Uses 4 font families (Filson, Lato, Montserrat, Noto Sans) — the rule is 2 at most</h4>
+<p><b>Evidence</b> 4 font families loaded: Filson, Lato, Montserrat and Noto Sans (Console: document.fonts, 02/11/2026), in 9 files (274 KB). For comparison: FisioPrime uses Poppins only (~32 KB).</p>
+<p class="how"><b>How measured</b> Console: families loaded in document.fonts; Network → Font filter</p>
+<p><b>Fix idea</b> Keep 2 families: one for headings (e.g. Filson Pro) and one for body text (e.g. Lato).</p></article>
+<article class="f">
+<div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Speed</span></div>
+<h4>The home page is the heaviest of the three: about 90 files and 3.4 MB, taking over 3.5 seconds to load</h4>
+<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 90 requests, 3.4 MB, Load 3.59 s (3.36 / 3.59 / 5.50 s). Breakdown: images 1,331 KB (24 requests), scripts 1,115 KB (28), styles 549 KB (25), fonts 274 KB (9).</p>
+<p class="how"><b>How measured</b> Network → Ctrl+Shift+R × 3 → &#x27;resources&#x27; and &#x27;Load&#x27;; Img/JS/CSS/Font filters</p>
+<p><b>Fix idea</b> Compress the images (WebP), the largest share; remove unused scripts and styles; target under 1 MB.</p></article>
+<article class="f">
+<div class="meta"><span class="n">6</span><span class="sev med">Medium</span><span class="cat">Accessibility</span></div>
+<h4>The hero carousel is hard to control: it changes by itself every 5 s with no way to pause, and the arrows are small for a thumb</h4>
+<p><b>Evidence</b> Automatic rotation every 5 s; it doesn&#x27;t stop on hover and has no pause button; clicking opens another page. At 375 × 812, the &#x27;&lt;&#x27; arrow is 20 × 20 px (minimum 44) (02/11/2026).</p>
+<p class="how"><b>How measured</b> Watch the carousel with the mouse over it; selection tool on the arrow at 375 × 812</p>
+<p><b>Fix idea</b> Replace the carousel with one fixed hero (see the hierarchy finding); if it stays, add a pause button, stop on hover, and use 44 px arrows.</p></article>
+<article class="f">
+<div class="meta"><span class="n">7</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
+<h4>The 4.9★ rating from 64 Google reviews doesn&#x27;t appear on the site; testimonials are far from the top and the videos are on a separate page</h4>
+<p><b>Evidence</b> Home page: &#x27;O que dizem os nossos utentes&#x27; (What our patients say) carousel with 7 written testimonials, no stars or date, 8 space-bar presses down at 375 × 812. The 4 video testimonials are only on the &#x27;Testemunhos&#x27; (Testimonials) page. No reference to the stars or the number of reviews. Google Maps: 4.9★, 64 reviews, latest one month ago (02/11/2026).</p>
+<p class="how"><b>How measured</b> Scroll the home page at 375 × 812 counting space-bar presses; open &#x27;Testemunhos&#x27;; Google Maps → Reviews → Sort → Newest</p>
+<p><b>Fix idea</b> Show &#x27;4.9★ · 64 Google reviews&#x27; on the first screen, next to the &#x27;Marcações&#x27; button; bring one video testimonial to the home page.</p></article>
+<article class="f">
+<div class="meta"><span class="n">8</span><span class="sev med">Medium</span><span class="cat">Call to action</span></div>
+<h4>The carousel&#x27;s &#x27;Saber mais&#x27; (Learn more) buttons are small, with tiny text and low contrast</h4>
+<p><b>Evidence</b> At 375 × 812: &#x27;Saber mais&#x27; button 88 × 23 px (minimum 44 tall), 11 px font, white on semi-transparent peach with contrast 2.04 (minimum 4.5), measured on slides 2 and 3 (02/11/2026). On slide 3, the subtitle &#x27;GRUPO OU INDIVIDUAL&#x27; also loses contrast against the photo.</p>
+<p class="how"><b>How measured</b> Selection tool on the button at 375 × 812: size, Font line and Contrast</p>
+<p><b>Fix idea</b> Button at least 44 px tall, 16 px text and a dark-green background (like &#x27;Seguinte&#x27;, which has contrast 7.21).</p></article>
+<article class="f">
+<div class="meta"><span class="n">9</span><span class="sev low">Low</span><span class="cat">Accessibility</span></div>
+<h4>A third of the images have no alt text, including the logo</h4>
+<p><b>Evidence</b> 8 of 22 images on the home page have no alt text (Console, after scrolling the whole page, 02/11/2026): the logo (3 times), 3 blog article photos and 1 decorative image.</p>
+<p class="how"><b>How measured</b> Scroll to the end; Console: count images without &#x27;alt&#x27; and list their names</p>
+<p><b>Fix idea</b> Describe the logo (&#x27;Carolina Aparício Fisioterapia&#x27;) and the article photos; leave only the decorative background empty.</p></article>
+<article class="f">
+<div class="meta"><span class="n">10</span><span class="sev low">Low</span><span class="cat">Trust</span></div>
+<h4>Blog articles have no date</h4>
+<p><b>Evidence</b> 3 articles on the blog, none with a publication date (02/11/2026); on a health site, readers can&#x27;t tell whether the information is current.</p>
+<p class="how"><b>How measured</b> Open the blog and look for a date on each article</p>
+<p><b>Fix idea</b> Show the publication date on each article.</p></article>
+<details><summary>2 dropped candidates — tested, did not hold up</summary>
+<article class="f">
+<div class="meta"><span class="n">11</span><span class="cat">Call to action</span></div>
+<h4>The hero buttons say &#x27;Saber mais&#x27; (Learn more — read) instead of booking</h4>
+<p><b>Evidence</b> The carousel buttons (&#x27;Saber mais&#x27;) lead to the service pages (e.g. Tecarterapia), which makes sense. The &#x27;Marcações&#x27; (Bookings) button is always visible in the header, on desktop and at 375 × 812, and leads to a 3-step pre-booking (02/11/2026).</p>
+<p class="how"><b>How measured</b> Read the first screen at both widths; click the buttons to see where they go</p>
+</article>
+<article class="f">
+<div class="meta"><span class="n">12</span><span class="cat">Images</span></div>
+<h4>The photo in the incontinence article may not belong to the clinic (the file name mentions &#x27;unihclinic&#x27;)</h4>
+<p><b>Evidence</b> The same photo appears on a Brazilian physiotherapy site (fisioterapiaembh.com.br); it is probably a stock image, which is acceptable to illustrate a blog article (02/11/2026).</p>
+<p class="how"><b>How measured</b> File names in the Console; Visual Search</p>
+</article>
+</details>
+<div class="strengths"><h4>Strengths</h4><ul><li>&#x27;Marcações&#x27; (Bookings) button always visible in the header, on desktop and on mobile</li><li>Clear 3-step pre-booking (booking → consultation → personal details), explaining that the clinic calls to confirm</li><li>Real team photos (e.g. physiotherapist João Almeida on the Tecar therapy page)</li><li>Opening hours on the site match Google Maps</li><li>4 video testimonials with real people, and 7 named written testimonials on the home page</li><li>&#x27;Seguinte&#x27; (Next) button contrast 7.21; tapping an option&#x27;s word selects it</li><li>The page fits 375 px with no horizontal scroll</li></ul></div>
+</section>
+<h2 id="hero">Hero redesign</h2>
+<p class="pattern">Clínica Fysio, before and after, on desktop and at 375 px. The new hero is built in code and fixes the audit's first seven issues: a promise instead of "Início", one useful line instead of three paragraphs, the 5.0★ rating on the first screen, a 54 px booking button that opens WhatsApp, and space reserved for a real photo.</p>
+<a class="shot" href="/semana-5/hero/"><img src="/semana-5/img/hero-preview.webp" width="1400" height="1282" loading="lazy" alt="Before and after of the Clínica Fysio first screen, on desktop and on mobile"></a>
+<p><a class="btn" href="/semana-5/hero/">Open the live comparison</a></p>
+<h2 id="style">Style guide</h2>
+<p class="pattern">tempo. — my future AI agency. Five name ideas and one pick, two typefaces (Figtree and Instrument Serif), one action green, nine spacing steps, the building blocks, the first screen put together, the rules and the voice.</p>
+<a class="shot" href="/semana-5/style-guide/"><img src="/semana-5/img/style-guide-preview.webp" width="1200" height="1416" loading="lazy" alt="Top of the tempo. style guide: wordmark, tagline and the five name ideas"></a>
+<p><a class="btn" href="/semana-5/style-guide/">Open the full style guide</a></p>
+</main>
+<footer>Rui Carmo · Week 5 deliverable · This page is not listed by search engines.</footer>
+</div>
+</body>
+</html>

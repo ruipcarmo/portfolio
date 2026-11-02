@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tempo — Style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* ===== The guide itself, written as settings (change here, changes everywhere) ===== */
+  :root{
+    /* Colours */
+    --ink:#1f2a24;      /* text */
+    --muted:#5b6660;    /* secondary text */
+    --forest:#2f6b4f;   /* ACTION colour: buttons and links only */
+    --forest-dark:#24543e;
+    --paper:#f4f6f1;    /* page background */
+    --white:#ffffff;    /* cards */
+    --line:#dfe6e1;     /* borders */
+    --mist:#e3eee7;     /* soft tint for labels */
+
+    /* Fonts */
+    --sans:"Figtree",system-ui,sans-serif;
+    --serif:"Instrument Serif",Georgia,serif;
+
+    /* Spacing: every gap is one of these steps */
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+
+    /* Corners */
+    --r-sm:10px; --r-md:16px; --r-pill:999px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);font-size:18px;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 var(--s5)}
+  section{padding:var(--s8) 0;border-top:1px solid var(--line)}
+  .kicker{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
+  h2{font-size:clamp(30px,4vw,40px);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin:var(--s2) 0 var(--s3)}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:var(--s6)}
+  .grid{display:grid;gap:var(--s4)}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s5)}
+  .card h3{font-size:22px;line-height:1.2;letter-spacing:-.01em;margin-bottom:var(--s2)}
+  .card p{color:var(--muted);font-size:16px}
+  .tag{display:inline-block;font-size:13px;font-weight:700;background:var(--mist);color:var(--forest);border-radius:var(--r-pill);padding:3px 10px;margin-bottom:var(--s3)}
+  code{font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--ink);background:var(--mist);padding:1px 6px;border-radius:6px}
+
+  /* Cover */
+  .cover{padding-top:var(--s9);padding-bottom:var(--s8)}
+  .wordmark{font-weight:800;font-size:clamp(64px,11vw,132px);letter-spacing:-.05em;line-height:.9}
+  .wordmark span{color:var(--forest)}
+  .cover h1{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,4vw,44px);line-height:1.15;color:var(--forest);margin-top:var(--s4)}
+  .cover p{color:var(--muted);margin-top:var(--s4);max-width:56ch}
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s6);font-size:15px;color:var(--muted)}
+  .meta b{color:var(--ink)}
+
+  /* Names */
+  .name{font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1.1;margin-bottom:var(--s2)}
+  .name em{font-family:var(--serif);font-weight:400;color:var(--forest)}
+  .pick{border:2px solid var(--forest)}
+  .pick .tag{background:var(--forest);color:#fff}
+
+  /* Colours */
+  .sw{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:var(--white)}
+  .sw .chip{height:110px;display:flex;align-items:flex-end;padding:var(--s3);font-weight:700;font-size:15px}
+  .sw .info{padding:var(--s4)}
+  .sw .info b{display:block;font-size:17px}
+  .sw .info small{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:var(--s1)}
+  .rule{margin-top:var(--s5);background:var(--white);border-left:4px solid var(--forest);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:var(--s4) var(--s5);font-size:16px}
+
+  /* Type */
+  .spec{display:grid;grid-template-columns:150px 1fr;gap:var(--s5);align-items:baseline;padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+  .spec:last-child{border-bottom:0}
+  .spec small{color:var(--muted);font-size:14px;line-height:1.4}
+  .t-display{font-size:clamp(44px,6vw,72px);font-weight:800;letter-spacing:-.035em;line-height:1}
+  .t-display em{font-family:var(--serif);font-weight:400;color:var(--forest)}
+  .t-h2{font-size:clamp(30px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .t-h3{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+  .t-body{font-size:18px;line-height:1.6}
+  .t-small{font-size:14px;color:var(--muted)}
+  .fonts{margin-bottom:var(--s6)}
+  .font-big{font-size:64px;line-height:1;margin:var(--s3) 0}
+  .serif{font-family:var(--serif);font-style:italic;color:var(--forest)}
+
+  /* Spacing */
+  .steps{display:flex;flex-direction:column;gap:var(--s2)}
+  .step{display:grid;grid-template-columns:70px 1fr 220px;gap:var(--s4);align-items:center;font-size:15px}
+  .step .bar{height:16px;background:var(--forest);border-radius:4px}
+  .step span:last-child{color:var(--muted)}
+  .radii{display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s3)}
+  .radii div{width:84px;height:60px;background:var(--mist);border:1.5px solid var(--forest);display:grid;place-items:center;font-size:13px;font-weight:600}
+
+  /* Components */
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 var(--s6);border-radius:var(--r-sm);font-weight:700;font-size:17px;text-decoration:none;font-family:var(--sans)}
+  .btn-main{background:var(--forest);color:#fff}
+  .btn-main:hover{background:var(--forest-dark)}
+  .btn-ghost{border:1.5px solid #b9c4bd;color:var(--ink)}
+  .row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+  .eyebrow{font-size:15px;font-weight:600;color:var(--forest)}
+  .facts{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s6);color:var(--muted);font-size:16px}
+  .facts b{font-size:22px;color:var(--ink);margin-right:var(--s1)}
+
+  /* Example */
+  .example{background:var(--white);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+  .ex-nav{display:flex;align-items:center;gap:var(--s5);padding:var(--s4) var(--s6);border-bottom:1px solid var(--line)}
+  .ex-nav .logo{font-weight:800;font-size:24px;letter-spacing:-.04em}
+  .ex-nav .logo span{color:var(--forest)}
+  .ex-nav nav{margin-left:auto;display:flex;gap:var(--s5);font-size:15px;color:var(--muted)}
+  .ex-hero{padding:var(--s8) var(--s6);display:grid;grid-template-columns:1.2fr .8fr;gap:var(--s7);align-items:center;background:var(--paper)}
+  .ex-hero h3{font-size:clamp(40px,5.5vw,64px);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin:var(--s3) 0 var(--s4)}
+  .ex-hero h3 em{display:block;font-family:var(--serif);font-weight:400;color:var(--forest)}
+  .ex-hero p.sub{color:var(--muted);font-size:19px;max-width:38ch;margin-bottom:var(--s6)}
+  .ex-side{display:grid;gap:var(--s3)}
+  .ex-side .card{padding:var(--s4) var(--s5)}
+  .ex-side .card b{display:block;font-size:17px}
+  .ex-side .card span{font-size:15px;color:var(--muted)}
+
+  /* Rules */
+  .do,.dont{font-size:16px}
+  .do h3::before{content:"✓ ";color:var(--forest)}
+  .dont h3::before{content:"✕ ";color:#a3412c}
+
+  footer{padding-top:var(--s6);padding-bottom:var(--s8);color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+  @media (max-width:860px){
+    .g3,.g4{grid-template-columns:repeat(2,1fr)}
+    .ex-hero{grid-template-columns:1fr}
+    .ex-nav nav{display:none}
+    .step{grid-template-columns:56px 1fr;}
+    .step span:last-child{grid-column:1/-1;margin-top:-6px}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .wrap{padding:0 var(--s4)}
+    section{padding:var(--s7) 0}
+    .g2,.g3,.g4{grid-template-columns:1fr}
+    .spec{grid-template-columns:1fr;gap:var(--s1)}
+    .ex-hero{padding:var(--s6) var(--s5)}
+    .ex-nav{padding:var(--s4) var(--s5)}
+    .row .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap cover">
+  <div class="kicker">Module 5 · Task 4 · Style guide v1</div>
+  <div class="wordmark" style="margin-top:24px">tempo<span>.</span></div>
+  <h1>Save time. Stay ahead.</h1>
+  <p>Style guide for the home page of my future AI agency. It helps businesses of every kind save time and work smarter, so they stay competitive.</p>
+  <div class="meta"><span><b>Author</b> Rui Carmo</span><span><b>Date</b> 1 Nov 2026</span><span><b>Based on</b> my portfolio and the audit rules</span></div>
+</header>
+
+<!-- 1. NAME IDEAS -->
+<section>
+  <div class="wrap">
+    <div class="kicker">1 · Name ideas</div>
+    <h2>Five names, one pick</h2>
+    <p class="lead">Each name is short, easy to say in Portuguese and English, and comes from one idea: giving businesses their time back. Before choosing, check that the domain and social handles are free and that no company nearby already uses the name.</p>
+    <div class="grid g3">
+      <div class="card pick"><span class="tag">My pick</span>
+        <div class="name">tempo<em>.</em></div>
+        <p>Time is the most valuable currency a business has. The name says exactly what the agency gives back.</p></div>
+      <div class="card"><span class="tag">Option 2</span>
+        <div class="name">Passo <em>a</em> Passo</div>
+        <p>“Step by step”: no jargon, no rush. Warm and trustworthy, best for clients in Portugal.</p></div>
+      <div class="card"><span class="tag">Option 3</span>
+        <div class="name">Clareira</div>
+        <p>A clearing in the forest: space and light where there was clutter. Links to nature and to clear explanations.</p></div>
+      <div class="card"><span class="tag">Option 4</span>
+        <div class="name">Atalho</div>
+        <p>“Shortcut”. Says what the agency does: finds the faster way to do the same work.</p></div>
+      <div class="card"><span class="tag">Option 5</span>
+        <div class="name">Ritmo <em>Lab</em></div>
+        <p>“Rhythm”. A business that runs smoothly has a good rhythm; “Lab” says we test and improve.</p></div>
+      <div class="card" style="background:var(--mist);border-color:transparent"><span class="tag" style="background:#fff">How I chose</span>
+        <p style="color:var(--ink)">Short (1–2 syllables to say). Same meaning in PT and EN. Tells a story about time. Not tied to one kind of client.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. COLOURS -->
+<section>
+  <div class="wrap">
+    <div class="kicker">2 · Colours</div>
+    <h2>Calm neutrals, one action green</h2>
+    <p class="lead">The green from my portfolio becomes the agency’s action colour. Everything else is quiet, so the eye goes straight to the button.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="chip" style="background:#2f6b4f;color:#fff">Forest</div><div class="info"><b>#2F6B4F</b><small>Buttons and links only. White text on it: contrast 6.3 (passes).</small></div></div>
+      <div class="sw"><div class="chip" style="background:#1f2a24;color:#fff">Ink</div><div class="info"><b>#1F2A24</b><small>Headings and body text. Contrast on Paper: 13.6.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#5b6660;color:#fff">Moss</div><div class="info"><b>#5B6660</b><small>Secondary text and captions. Contrast on Paper: 5.5.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#f4f6f1;color:#1f2a24">Paper</div><div class="info"><b>#F4F6F1</b><small>Page background, a soft green-white.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#ffffff;color:#1f2a24;border-bottom:1px solid #dfe6e1">White</div><div class="info"><b>#FFFFFF</b><small>Cards and boxes on top of Paper.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#e3eee7;color:#2f6b4f">Mist</div><div class="info"><b>#E3EEE7</b><small>Small labels and highlights. Never on buttons.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#dfe6e1;color:#1f2a24">Line</div><div class="info"><b>#DFE6E1</b><small>Borders and dividers.</small></div></div>
+      <div class="sw"><div class="chip" style="background:#24543e;color:#fff">Forest dark</div><div class="info"><b>#24543E</b><small>Only when the mouse is over a green button.</small></div></div>
+    </div>
+    <p class="rule"><b>Rule:</b> if it is green, you can click it. Nothing decorative is ever Forest green, except the dot in the logo and the italic words in a headline.</p>
+  </div>
+</section>
+
+<!-- 3. TYPOGRAPHY -->
+<section>
+  <div class="wrap">
+    <div class="kicker">3 · Fonts</div>
+    <h2>Two typefaces, no more</h2>
+    <p class="lead">Both are free on Google Fonts. Figtree does all the work; Instrument Serif appears only in italics, for one or two words that carry the feeling.</p>
+    <div class="grid g2 fonts">
+      <div class="card"><span class="tag">Main · Figtree</span><div class="font-big" style="font-weight:800;letter-spacing:-.03em">Aa Bb 123</div><p>Headings (Extra Bold 800), buttons (Bold 700) and body text (Regular 400). Clear and friendly, easy to read on a phone.</p></div>
+      <div class="card"><span class="tag">Accent · Instrument Serif</span><div class="font-big serif">Aa Bb 123</div><p>Italic only, in Forest green, for the second half of a headline. Never for paragraphs or buttons.</p></div>
+    </div>
+    <div class="card">
+      <div class="spec"><small>Display · 44–72 px<br>800 · line 1.0</small><div class="t-display">Save time. <em>Stay ahead.</em></div></div>
+      <div class="spec"><small>Section title · 30–40 px<br>800 · line 1.1</small><div class="t-h2">How we help your team</div></div>
+      <div class="spec"><small>Card title · 22 px<br>700 · line 1.2</small><div class="t-h3">Answer customers while you sleep</div></div>
+      <div class="spec"><small>Body · 18 px (16 on phones)<br>400 · line 1.6</small><div class="t-body">We look at the tasks that eat your week, then build simple AI tools that do them for you.</div></div>
+      <div class="spec"><small>Small · 14 px<br>400 · Moss</small><div class="t-small">Free 30-minute call · No commitment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SPACING -->
+<section>
+  <div class="wrap">
+    <div class="kicker">4 · Spacing</div>
+    <h2>Nine steps of space</h2>
+    <p class="lead">Like the marks on a running track: every gap on the page uses one of these distances, so everything lines up without measuring by eye. Each step is a multiple of 4 px.</p>
+    <div class="card steps">
+      <div class="step"><b>4 px</b><div class="bar" style="width:4px"></div><span>Icon next to text</span></div>
+      <div class="step"><b>8 px</b><div class="bar" style="width:8px"></div><span>Between small labels</span></div>
+      <div class="step"><b>12 px</b><div class="bar" style="width:12px"></div><span>Between two buttons</span></div>
+      <div class="step"><b>16 px</b><div class="bar" style="width:16px"></div><span>Side margin on phones</span></div>
+      <div class="step"><b>24 px</b><div class="bar" style="width:24px"></div><span>Inside cards; margin on computers</span></div>
+      <div class="step"><b>32 px</b><div class="bar" style="width:32px"></div><span>Between paragraph and buttons</span></div>
+      <div class="step"><b>48 px</b><div class="bar" style="width:48px"></div><span>Between columns</span></div>
+      <div class="step"><b>64 px</b><div class="bar" style="width:64px"></div><span>Top and bottom of a section</span></div>
+      <div class="step"><b>96 px</b><div class="bar" style="width:96px"></div><span>Top of the hero on computers</span></div>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><span class="tag">Page width</span><h3>1120 px max</h3><p>Text lines stay under about 65 characters, so they are easy to follow.</p></div>
+      <div class="card"><span class="tag">Corners</span><div class="radii"><div style="border-radius:10px">10 · buttons</div><div style="border-radius:16px">16 · cards</div><div style="border-radius:999px">pill · labels</div></div></div>
+      <div class="card"><span class="tag">Touch</span><h3>52 px buttons</h3><p>Everything you tap is at least 44 px tall. Main buttons are 52 px.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. COMPONENTS -->
+<section>
+  <div class="wrap">
+    <div class="kicker">5 · Building blocks</div>
+    <h2>The pieces of the page</h2>
+    <p class="lead">Reusable parts, like the cones and bibs of a PE lesson: the same few pieces, set up in different ways.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Buttons</span>
+        <div class="row" style="margin:8px 0 16px"><a class="btn btn-main" href="#">Book a free call</a><a class="btn btn-ghost" href="#">See what we do</a></div>
+        <p>One green button per screen, with a verb that says what happens. The second button is outline only.</p></div>
+      <div class="card"><span class="tag">Eyebrow and facts</span>
+        <p class="eyebrow" style="margin:8px 0 12px">AI for businesses of every kind</p>
+        <div class="facts"><span><b>3</b>websites built</span><span><b>0</b>complications</span></div>
+        <p style="margin-top:16px">A small green line above the title; real numbers below the buttons as proof.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EXAMPLE -->
+<section>
+  <div class="wrap">
+    <div class="kicker">6 · Put together</div>
+    <h2>The agency home page, first screen</h2>
+    <p class="lead">Every rule above in one place. The promise comes first, the action is easy to find, and the proof sits close to the button.</p>
+    <div class="example">
+      <div class="ex-nav"><div class="logo">tempo<span>.</span></div><nav><span>Services</span><span>Projects</span><span>About</span></nav><a class="btn btn-ghost" href="#" style="min-height:44px;padding:0 20px;font-size:15px">Book a call</a></div>
+      <div class="ex-hero">
+        <div>
+          <p class="eyebrow">AI for businesses of every kind</p>
+          <h3>Save time. <em>Stay ahead.</em></h3>
+          <p class="sub">We find the tasks that eat your week and hand them to simple AI tools, so your team can focus on customers.</p>
+          <div class="row"><a class="btn btn-main" href="#">Book a free call</a><a class="btn btn-ghost" href="#">See what we do</a></div>
+          <div class="facts" style="margin-top:28px;padding-top:20px;border-top:1px solid var(--line)"><span><b>3</b>websites built</span><span><b>0</b>complications</span></div>
+        </div>
+        <div class="ex-side">
+          <div class="card"><b>Answer messages faster</b><span>Replies ready for the questions customers ask every day.</span></div>
+          <div class="card"><b>Get found online</b><span>A clear website with one button to book or call.</span></div>
+          <div class="card"><b>Less paperwork</b><span>Forms, lists and reports that fill themselves.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. RULES -->
+<section>
+  <div class="wrap">
+    <div class="kicker">7 · Rules</div>
+    <h2>Do and don’t</h2>
+    <p class="lead">Taken from the audits of real local websites in this module.</p>
+    <div class="grid g3">
+      <div class="card do"><h3>Lead with a promise</h3><p>The biggest words say what the client gains, not who we are.</p></div>
+      <div class="card do"><h3>One green button</h3><p>A clear verb (“Book”, “Call”) and visible without scrolling on a phone.</p></div>
+      <div class="card do"><h3>Real proof, near the top</h3><p>Real numbers and real work. Nothing invented.</p></div>
+      <div class="card dont"><h3>No stock photos</h3><p>Show real projects, real people or nothing at all.</p></div>
+      <div class="card dont"><h3>No third font</h3><p>Figtree and Instrument Serif only.</p></div>
+      <div class="card dont"><h3>No centred walls of text</h3><p>Align left; one idea per paragraph.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. VOICE -->
+<section>
+  <div class="wrap">
+    <div class="kicker">8 · Voice</div>
+    <h2>Short. Clear. With weight.</h2>
+    <p class="lead">Tempo speaks in short sentences that end with a full stop that matters. Two beats, then silence. No jargon, no exclamation marks.</p>
+    <div class="card" style="padding:48px 32px;margin-bottom:16px">
+      <span class="tag">Brand line · About page</span>
+      <div class="t-display" style="margin-top:12px">Dinheiro recupera-se. <em>Tempo não.</em></div>
+      <p style="margin-top:16px;color:var(--muted)">“Money comes back. Time doesn’t.” Followed by: <b style="color:var(--ink)">«Com base nesta ideia, nasceu este projeto.»</b> (“This project was born from that idea.”) The brand speaks for itself: the founder’s name appears only in the legal footer and on invoices.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card do"><h3>Two beats</h3><p>“Save time. Stay ahead.” Two short sentences beat one long one.</p></div>
+      <div class="card do"><h3>Play with the name</h3><p>“tempo” (time) and “Tempo” (the brand) can share a sentence.</p></div>
+      <div class="card dont"><h3>No invented team</h3><p>“We” is the voice of the brand. Never fake people, titles or numbers.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">Tempo style guide v1 · Rui Carmo · AI mentorship, module 5</footer>
+
+</body>
+</html>
