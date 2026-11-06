@@ -42,6 +42,8 @@ details .f{opacity:.8}
 .strengths h4{margin:0 0 6px} .strengths ul{margin:0;padding-left:20px}
 
 .shot{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 16px;background:var(--card)}.shot img{display:block;width:100%;height:auto}
+
+.proofs{display:grid;gap:16px}figure{margin:0}figure a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}figure img{display:block;width:100%;height:auto}figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .soon{color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center}
 footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 </style>
@@ -52,11 +54,18 @@ footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 <p class="kicker">Week 5 · UI/UX</p>
 <h1>Three physiotherapy clinic websites in Viseu, audited</h1>
 <p class="lead">10 confirmed findings per site, each backed by a number or a test I ran myself, plus the candidates I dropped and what each site does well. Then the hero I redesigned and my agency's style guide.</p>
-<nav><a href="#patterns">Patterns</a><a href="#fysio">Clínica Fysio</a><a href="#fisioprime">FisioPrime</a><a href="#carolina">Carolina Aparício</a><a href="#hero">Hero redesign</a><a href="#style">Style guide</a><a class="btn" href="/semana-5/week5-ui-audits.xlsx" download>Download spreadsheet</a></nav>
+<nav><a href="#patterns">Patterns</a><a href="#google">Google ratings</a><a href="#fysio">Clínica Fysio</a><a href="#fisioprime">FisioPrime</a><a href="#carolina">Carolina Aparício</a><a href="#hero">Hero redesign</a><a href="#style">Style guide</a><a class="btn" href="/semana-5/week5-ui-audits.xlsx" download>Download spreadsheet</a></nav>
 </header>
 <main>
-<section id="patterns"><h2>Patterns across the three sites</h2><ol class="cross"><li>None of the three clinics shows its Google rating near the top of the page (Clínica Fysio 5.0★ · 35 reviews; FisioPrime 4.9★ · 10; Carolina Aparício 4.9★ · 64) — their strongest trust signal is invisible.</li><li>None has a hero with one clear promise and a &#x27;Book&#x27; button: one says &#x27;Início&#x27; (Home), one says &#x27;Criamos Campeões&#x27; (We create champions) with an &#x27;About us&#x27; button, and one rotates three messages.</li><li>The two sites I timed are heavy on first load — FisioPrime 2.2 MB / 3.1 s, Carolina Aparício 3.4 MB / 3.6 s; my own portfolio, measured from the same connection, is 136 KB / ~0.5 s.</li></ol>
-<p class="stats"><span>Benchmark: movimente.pt</span><span>Measured 01–02/11/2026</span><span>Mobile at 375 × 812</span></p></section>
+<section id="patterns"><h2>Patterns across the three sites</h2><ol class="cross"><li>None of the three clinics shows its Google rating near the top of the page (Clínica Fysio 5.0★ · 35 reviews; FisioPrime 4.9★ · 10; Carolina Aparício 4.9★ · 64) — their strongest trust signal is invisible.</li><li>None has a hero with one clear promise and a &#x27;Book&#x27; button: one says &#x27;Início&#x27; (Home), one says &#x27;Criamos Campeões&#x27; (We create champions) with an &#x27;About us&#x27; button, and one rotates three messages.</li><li>The two sites I timed are heavy on first load — FisioPrime 2.2 MB / 3.1 s, Carolina Aparício 3.4 MB / 3.6 s; my own portfolio, from the same connection, is 162 KB / 0.58 s. All times were measured from Timor-Leste on home Wi-Fi (Starlink); on another connection the seconds change, but the order between the sites stays the same.</li></ol>
+<p class="stats"><span>Benchmark: movimente.pt</span><span>Measured 01–02/11/2026</span><span>Mobile at 375 × 812</span><span>Timings from Timor-Leste, home Wi-Fi (Starlink)</span></p></section>
+<section id="google"><h2>Google ratings — screenshots</h2>
+<p class="pattern">Google blocks automated tools, so these are the screenshots behind the ratings quoted in the audits: the listing, its address, and the clock. Taken on 06/11/2026, 08:06–08:09 (Portugal time).</p>
+<div class="proofs">
+<figure><a href="/semana-5/img/google-fysio.webp"><img src="/semana-5/img/google-fysio.webp" width="1276" height="690" loading="lazy" alt="Google Maps listing of FYSIO - Clínica de Fisioterapia, Saúde e Bem Estar, Viseu: 5.0 stars, 35 reviews; clock 06/11/2026 08:06"></a><figcaption><b>Clínica Fysio</b> · 5.0★ · 35 reviews · website listed: clinicafysio.com · 06/11/2026 08:06</figcaption></figure>
+<figure><a href="/semana-5/img/google-fisioprime.webp"><img src="/semana-5/img/google-fisioprime.webp" width="1271" height="690" loading="lazy" alt="Google Maps listing of FisioPrime Viseu: 4.9 stars, 10 reviews; clock 06/11/2026 08:08"></a><figcaption><b>FisioPrime</b> · 4.9★ · 10 reviews · 06/11/2026 08:08</figcaption></figure>
+<figure><a href="/semana-5/img/google-carolina.webp"><img src="/semana-5/img/google-carolina.webp" width="1277" height="687" loading="lazy" alt="Google Maps listing of Carolina Aparício Fisioterapia, Viseu: 4.9 stars, 64 reviews; clock 06/11/2026 08:09"></a><figcaption><b>Carolina Aparício</b> · 4.9★ · 64 reviews · 06/11/2026 08:09</figcaption></figure>
+</div></section>
 <h2 id="audits">Audits</h2>
 <section class="clinic" id="fysio">
 <h3>Clínica Fysio <span class="url">clinicafysio.com</span></h3>
@@ -89,7 +98,7 @@ footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 <article class="f">
 <div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
 <h4>Google reviews appear only at the bottom of the home page, with no average or total, and stop in March 2023 — the site doesn&#x27;t show recent reviews</h4>
-<p><b>Evidence</b> &#x27;Críticas&#x27; (Reviews) section only at the bottom of the home page (4 space-bar presses at 375 × 812). 6 Google reviews, all from 2023 (latest: 24/03/2023), no average or total. Google Maps: 5.0★, 35 reviews, latest 2 months ago (checked 01/11/2026).</p>
+<p><b>Evidence</b> &#x27;Críticas&#x27; (Reviews) section only at the bottom of the home page (4 space-bar presses at 375 × 812). 6 Google reviews, all from 2023 (latest: 24/03/2023), no average or total. Google Maps: 5.0★, 35 reviews, latest 2 months ago (checked 01/11/2026; re-checked with a dated screenshot on 06/11/2026, same values).</p>
 <p class="how"><b>How measured</b> Scroll the home page to the end; Google Maps → Reviews → Sort → Newest</p>
 <p><b>Fix idea</b> Show the Google average and total near the top (e.g. &#x27;5.0★ · 35 Google reviews&#x27;) and use a reviews widget that updates by itself.</p></article>
 <article class="f">
@@ -162,13 +171,13 @@ footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 <article class="f">
 <div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
 <h4>The site shows only 2 testimonials, with no stars, date or source, far down the page; the 4.9★ Google rating doesn&#x27;t appear</h4>
-<p><b>Evidence</b> 2 testimonials on the home page, 9 space-bar presses down at 375 × 812, with no stars, date or source, both with the same generic avatar. Google Maps: 4.9★, 10 reviews, latest one week ago (02/11/2026).</p>
+<p><b>Evidence</b> 2 testimonials on the home page, 9 space-bar presses down at 375 × 812, with no stars, date or source, both with the same generic avatar. Google Maps: 4.9★, 10 reviews, latest one week ago (02/11/2026; re-checked with a dated screenshot on 06/11/2026, same values).</p>
 <p class="how"><b>How measured</b> Scroll the home page at 375 × 812 counting space-bar presses; Google Maps → Reviews → Sort → Newest</p>
 <p><b>Fix idea</b> Show &#x27;4.9★ on Google&#x27; next to the booking button on the first screen; use real Google reviews with name and date.</p></article>
 <article class="f">
 <div class="meta"><span class="n">6</span><span class="sev med">Medium</span><span class="cat">Speed</span></div>
 <h4>The home page is heavy and slow: about 100 files and 2.2 MB, taking over 3 seconds to load</h4>
-<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 100 requests, 2.2 MB, Load 3.14 s (2.92 / 3.14 / 3.40 s). Breakdown: images 647 KB (34 requests), scripts 621 KB (22), styles 528 KB (34), fonts 191 KB (6) — of which 161 KB are two icon libraries (Font Awesome) loaded for a few symbols; Poppins itself is only ~32 KB. The video does not load on entry. For comparison, from the same connection: my portfolio is 136 KB and loads in ~0.5 s.</p>
+<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 100 requests, 2.2 MB, Load 3.14 s (2.92 / 3.14 / 3.40 s). Breakdown: images 647 KB (34 requests), scripts 621 KB (22), styles 528 KB (34), fonts 191 KB (6) — of which 161 KB are two icon libraries (Font Awesome) loaded for a few symbols; Poppins itself is only ~32 KB. The video does not load on entry. Measured from Timor-Leste on home Wi-Fi (Starlink): absolute times depend on the connection, the ranking between sites does not. For comparison, from the same connection: my portfolio is 162 KB (154 KB transferred) and loads in 0.58 s (median of 3, 06/11/2026).</p>
 <p class="how"><b>How measured</b> Network → Ctrl+Shift+R × 3 → &#x27;resources&#x27; and &#x27;Load&#x27; (not &#x27;Finish&#x27;, which includes requests made after the page is ready); Img/JS/CSS/Font filters</p>
 <p><b>Fix idea</b> Weight is spread out: compress images (WebP), remove unused plugins to cut scripts and styles, and merge the 34 style files into a few; target under 1 MB and under 50 requests.</p></article>
 <article class="f">
@@ -241,7 +250,7 @@ footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 <article class="f">
 <div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Speed</span></div>
 <h4>The home page is the heaviest of the three: about 90 files and 3.4 MB, taking over 3.5 seconds to load</h4>
-<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 90 requests, 3.4 MB, Load 3.59 s (3.36 / 3.59 / 5.50 s). Breakdown: images 1,331 KB (24 requests), scripts 1,115 KB (28), styles 549 KB (25), fonts 274 KB (9).</p>
+<p><b>Evidence</b> Median of 3 first-time-visitor loads (Ctrl+Shift+R, 02/11/2026): 90 requests, 3.4 MB, Load 3.59 s (3.36 / 3.59 / 5.50 s). Breakdown: images 1,331 KB (24 requests), scripts 1,115 KB (28), styles 549 KB (25), fonts 274 KB (9). Measured from Timor-Leste on home Wi-Fi (Starlink): absolute times depend on the connection, the ranking between sites does not.</p>
 <p class="how"><b>How measured</b> Network → Ctrl+Shift+R × 3 → &#x27;resources&#x27; and &#x27;Load&#x27;; Img/JS/CSS/Font filters</p>
 <p><b>Fix idea</b> Compress the images (WebP), the largest share; remove unused scripts and styles; target under 1 MB.</p></article>
 <article class="f">
@@ -253,7 +262,7 @@ footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
 <article class="f">
 <div class="meta"><span class="n">7</span><span class="sev med">Medium</span><span class="cat">Social proof</span></div>
 <h4>The 4.9★ rating from 64 Google reviews doesn&#x27;t appear on the site; testimonials are far from the top and the videos are on a separate page</h4>
-<p><b>Evidence</b> Home page: &#x27;O que dizem os nossos utentes&#x27; (What our patients say) carousel with 7 written testimonials, no stars or date, 8 space-bar presses down at 375 × 812. The 4 video testimonials are only on the &#x27;Testemunhos&#x27; (Testimonials) page. No reference to the stars or the number of reviews. Google Maps: 4.9★, 64 reviews, latest one month ago (02/11/2026).</p>
+<p><b>Evidence</b> Home page: &#x27;O que dizem os nossos utentes&#x27; (What our patients say) carousel with 7 written testimonials, no stars or date, 8 space-bar presses down at 375 × 812. The 4 video testimonials are only on the &#x27;Testemunhos&#x27; (Testimonials) page. No reference to the stars or the number of reviews. Google Maps: 4.9★, 64 reviews, latest one month ago (02/11/2026; re-checked with a dated screenshot on 06/11/2026, same values).</p>
 <p class="how"><b>How measured</b> Scroll the home page at 375 × 812 counting space-bar presses; open &#x27;Testemunhos&#x27;; Google Maps → Reviews → Sort → Newest</p>
 <p><b>Fix idea</b> Show &#x27;4.9★ · 64 Google reviews&#x27; on the first screen, next to the &#x27;Marcações&#x27; button; bring one video testimonial to the home page.</p></article>
 <article class="f">
