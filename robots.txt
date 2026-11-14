@@ -1,0 +1,7 @@
+# Search engines may visit every page.
+# The week 5 and week 6 pages stay hidden with their own "noindex" tag
+# (blocking them here would stop Google from reading that tag).
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-mu-indol-57.vercel.app/sitemap.xml

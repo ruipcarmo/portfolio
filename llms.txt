@@ -1,0 +1,13 @@
+# Rui Carmo
+
+> PE teacher since 1996, now building an agency that helps businesses of every kind save time and work smarter with AI. This portfolio shows the websites I have built so far.
+
+## Projects
+
+- [Westminster Bakery](https://westminster-bakery.vercel.app): a concept one-page site for an artisanal bakery, with its products, its history and how to find it.
+- [MS Fitness Studio](https://ms-fitness-studio.vercel.app): a one-page site for a women-only training studio in Viseu (Portugal) that only had Instagram, with its services and a WhatsApp button to book a session.
+- [Muralha da Sé](https://muralha-da-se.vercel.app): a one-page site for a restaurant in a granite house by the cathedral, with its story, menu, hours and a tap-to-call button.
+
+## Contact
+
+- [Get in touch](https://portfolio-mu-indol-57.vercel.app/#contact)
