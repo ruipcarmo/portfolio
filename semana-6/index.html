@@ -56,8 +56,8 @@ table{width:100%;border-collapse:collapse;background:var(--card);border:1px soli
 <header>
 <p class="kicker">Week 6 · SEO and GEO</p>
 <h1>FisioPrime, Viseu: found on the map, lost in the list</h1>
-<p class="lead">An on-page SEO audit of one real local business (title, metas, headings, links, alt text, speed), plus what Google Maps and Google's AI say about it. 8 confirmed findings, each backed by a number or a dated screenshot I took myself, the candidates I dropped, and what I could not measure from outside.</p>
-<nav><a href="#summary">Summary</a><a href="#positions">Positions</a><a href="#hours">Four opening hours</a><a href="#findings">Findings</a><a href="#ai">Google's AI</a><a href="#limits">Limits</a><a class="btn" href="/semana-6/week6-seo-audit-fisioprime.xlsx" download>Download spreadsheet</a></nav>
+<p class="lead">Part 1: an on-page SEO audit of one real local business (title, metas, headings, links, alt text, speed), plus what Google Maps and Google's AI say about it. 8 confirmed findings, each backed by a number or a dated screenshot I took myself, the candidates I dropped, and what I could not measure from outside. Part 2: the same checks on my own portfolio, before and after fixing it.</p>
+<nav><a href="#summary">Summary</a><a href="#positions">Positions</a><a href="#hours">Four opening hours</a><a href="#findings">Findings</a><a href="#ai">Google's AI</a><a href="#limits">Limits</a><a href="#portfolio">My portfolio: before and after</a><a class="btn" href="/semana-6/week6-seo-audit-fisioprime.xlsx" download>Download spreadsheet</a></nav>
 </header>
 <main>
 <section id="summary"><h2>Summary</h2>
@@ -156,6 +156,28 @@ table{width:100%;border-collapse:collapse;background:var(--card);border:1px soli
 <section id="limits"><h2>What I could not measure from outside</h2>
 <div class="lim"><ul><li>Clicks, impressions and real search terms are only in Google Search Console (owner only)</li><li>No real-user speed data (&#x27;No Data&#x27;): only Google&#x27;s lab test</li><li>Searches made from Timor-Leste in a private window; Google set the area to &#x27;Viseu, Portugal&#x27;, but a person in Viseu may see a different order</li><li>Why the site ranks 11th cannot be proven from outside: Google uses many signals</li><li>AI answers change over time; the screenshot shows 07/11/2026 only</li><li>Number of bookings lost to each finding: only the clinic knows</li></ul></div>
 <p class="pattern">Prices are given as consequences, not euros: the clinic's visits and bookings are only visible to the clinic.</p></section>
+
+<section id="portfolio"><h2>Part 2 · My portfolio: before and after</h2>
+<p class="pattern">The same checks on portfolio-mu-indol-57.vercel.app, measured by me on 14/11/2026 in a private window, before (09:03–09:23) and after (09:55–10:17) publishing the fixes. The visible page did not change: only what Google and AI assistants read behind it.</p>
+<div class="tbl"><table><tr><th>Check</th><th>Before</th><th>After</th></tr>
+<tr><td>Google title</td><td>"Rui Carmo | Portfolio" (21 characters), says nothing about the work</td><td>"Rui Carmo | Websites and AI for businesses of every kind" (56)</td></tr>
+<tr><td>Meta description</td><td>60 characters, "learning to build with AI", out of step with the page</td><td>147 characters: what I do and the 3 websites I built</td></tr>
+<tr><td>Hidden card (JSON-LD)</td><td>None · Rich Results Test: "No items detected"</td><td>Person, WebSite, ItemList (the 3 projects) · "1 valid item detected"</td></tr>
+<tr><td>robots.txt</td><td>404</td><td>Exists: everything open, points to the sitemap</td></tr>
+<tr><td>sitemap.xml</td><td>404</td><td>Exists: home page only (the week 5 and 6 pages stay out and keep their noindex tag)</td></tr>
+<tr><td>llms.txt (for AI assistants)</td><td>404</td><td>Exists: who I am and the 3 projects</td></tr>
+<tr><td>PageSpeed mobile · desktop</td><td>95 · 100 (SEO 100 on both)</td><td>95 · 100 (SEO 100 on both)</td></tr>
+<tr><td>Weight · load time</td><td>162 KB · 0.58 s (week 5)</td><td>164 KB · 0.80 s (middle of 3: 872, 801, 746 ms)</td></tr>
+<tr><td>Pages Google knows (site: search)</td><td>0</td><td>0 — fixed today, not yet visited by Google</td></tr>
+</table></div>
+<p class="pattern">Dropped: "3 of 6 images without alt text". They are the three decorative screenshots in the hero, repeated below with full descriptions, so an empty alt is correct. The extra 2 KB is the hidden card; the time difference comes from the connection (Timor-Leste, home Wi-Fi, Starlink), not from the page. Like FisioPrime, the portfolio already scored SEO 100 with no sitemap, no robots.txt and no hidden card: the automatic score does not check for them.</p>
+<div class="proofs">
+<figure><a href="/semana-6/img/portfolio-console-before.webp"><img src="/semana-6/img/portfolio-console-before.webp" width="1280" height="768" loading="lazy" alt="Console quick pass on the portfolio before the fixes: robots, sitemap and llms.txt 404, no JSON-LD"></a><figcaption>Before · Console: robots.txt, sitemap.xml and llms.txt 404; no hidden card · 14/11/2026 09:03</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-console-after.webp"><img src="/semana-6/img/portfolio-console-after.webp" width="1280" height="768" loading="lazy" alt="Console quick pass on the portfolio after the fixes: robots, sitemap and llms.txt exist, 3 JSON-LD types"></a><figcaption>After · Console: all three files exist; 3 hidden-card types · 14/11/2026 09:55</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-rich-before.webp"><img src="/semana-6/img/portfolio-rich-before.webp" width="1280" height="768" loading="lazy" alt="Rich Results Test on the portfolio before: No items detected"></a><figcaption>Before · Rich Results Test: No items detected · 09:11</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-rich-after.webp"><img src="/semana-6/img/portfolio-rich-after.webp" width="1280" height="768" loading="lazy" alt="Rich Results Test on the portfolio after: 1 valid item detected"></a><figcaption>After · Rich Results Test: 1 valid item detected · 10:00</figcaption></figure>
+</div>
+<p class="pattern">Next step, as the owner: register the portfolio in Google Search Console and submit the sitemap, so Google visits it sooner.</p></section>
 </main>
 <footer>Rui Carmo · Week 6 deliverable · This page is not listed by search engines.</footer>
 </div>
