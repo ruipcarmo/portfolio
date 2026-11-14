@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 6 — SEO and GEO audit</title>
+<style>
+:root{--ink:#1F2A24;--muted:#5B6660;--line:#DDE3DF;--bg:#FAFAF7;--card:#FFFFFF;--accent:#2F6B4F;--accent-ink:#FFFFFF;
+--high-bg:#F8D7D3;--high:#8A1F12;--med-bg:#FCEBC7;--med:#7A4A00;--low-bg:#E3EEDF;--low:#2F5A23}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px}
+.kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0 0 8px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 16px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:62ch}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+nav a,.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--card)}
+.btn{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+h2{font-size:24px;margin:48px 0 16px;padding-top:8px;border-top:2px solid var(--ink)}
+.cross li{margin-bottom:12px}
+.clinic{margin-top:40px}
+h3{font-size:22px;margin:0 0 8px}
+.url{font-weight:400;color:var(--muted);font-size:16px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);font-size:14px;margin:0 0 12px}
+.stats span:first-child{color:var(--ink);font-weight:600}
+.pattern{margin:0 0 20px;max-width:65ch}
+.f{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.f h4{font-size:17px;line-height:1.4;margin:8px 0 10px}
+.f p{margin:0 0 8px;font-size:15px}
+.f p b{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px}
+.n{font-weight:700;color:var(--muted);min-width:20px}
+.cat{color:var(--muted)}
+.sev{padding:2px 10px;border-radius:999px;font-weight:600}
+.sev.high{background:var(--high-bg);color:var(--high)}.sev.med{background:var(--med-bg);color:var(--med)}.sev.low{background:var(--low-bg);color:var(--low)}
+details{margin:16px 0}
+summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted);font-weight:600}
+details .f{opacity:.8}
+.strengths{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin-top:16px}
+.strengths h4{margin:0 0 6px} .strengths ul{margin:0;padding-left:20px}
+
+.shot{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 16px;background:var(--card)}.shot img{display:block;width:100%;height:auto}
+
+.proofs{display:grid;gap:16px}figure{margin:0}figure a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}figure img{display:block;width:100%;height:auto}figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.soon{color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center}
+footer{color:var(--muted);font-size:14px;padding:48px 0 64px}
+
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px;margin:0 0 16px}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--accent);color:var(--accent-ink);font-weight:600}tr:last-child td{border-bottom:0}.tbl{overflow-x:auto}
+.lim{border-left:3px solid var(--line);padding:4px 0 4px 16px;margin-top:16px}.lim h4{margin:0 0 6px}.lim ul{margin:0;padding-left:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<p class="kicker">Week 6 · SEO and GEO</p>
+<h1>FisioPrime, Viseu: found on the map, lost in the list</h1>
+<p class="lead">An on-page SEO audit of one real local business (title, metas, headings, links, alt text, speed), plus what Google Maps and Google's AI say about it. 8 confirmed findings, each backed by a number or a dated screenshot I took myself, the candidates I dropped, and what I could not measure from outside.</p>
+<nav><a href="#summary">Summary</a><a href="#positions">Positions</a><a href="#hours">Four opening hours</a><a href="#findings">Findings</a><a href="#ai">Google's AI</a><a href="#limits">Limits</a><a class="btn" href="/semana-6/week6-seo-audit-fisioprime.xlsx" download>Download spreadsheet</a></nav>
+</header>
+<main>
+<section id="summary"><h2>Summary</h2>
+<p class="pattern">Strong on the map (2nd–3rd, 4.9★) but almost invisible in the list of websites (11th, page 2): the title and h1 say a slogan instead of &#x27;fisioterapia em Viseu&#x27;. The clinic gives four different opening hours, its Google text promises a team the site doesn&#x27;t show, and Google&#x27;s AI answer starts with a namesake in Brazil. The automatic test scores SEO 100: none of this is visible to it.</p>
+<p class="stats"><span>fisioprime.pt</span><span>8 confirmed · 2 high · 6 medium</span><span>3 dropped</span><span>Measured 06–07/11/2026 (footer 14/11/2026)</span><span>Searches from Timor-Leste, private window</span></p></section>
+
+<section id="positions"><h2>Where FisioPrime appears for "fisioterapia Viseu"</h2>
+<p class="pattern">Two different rankings on the same Google page: the map (fed mostly by the Google Business Profile) and the list of websites (fed mostly by the site itself). Paid ads are not counted. The map position changes between searches, so I report the series.</p>
+<div class="tbl"><table><tr><th>Date and time (Portugal)</th><th>Where</th><th>Position</th></tr><tr><td>07/11/2026 02:48</td><td>Google search → Places (map) list</td><td><b>2nd</b></td></tr><tr><td>07/11/2026 02:58</td><td>Google Maps</td><td><b>2nd</b></td></tr><tr><td>07/11/2026 03:22</td><td>Google search → Places (map) list</td><td><b>2nd</b></td></tr><tr><td>07/11/2026 05:27</td><td>Google Maps</td><td><b>3rd</b></td></tr><tr><td>07/11/2026 05:33</td><td>Google search → list of websites</td><td><b>11th (page 2)</b></td></tr></table></div>
+<div class="proofs">
+<figure><a href="/semana-6/img/sites-page2.webp"><img src="/semana-6/img/sites-page2.webp" width="1269" height="685" loading="lazy" alt="Google results page 2 for fisioterapia Viseu: fisioprime.pt with the title Fisioprime - Criamos campeões"></a><figcaption>Page 2 of "fisioterapia Viseu": fisioprime.pt is 11th. The sites around it name their service in the title; FisioPrime shows a slogan. 07/11/2026 05:33</figcaption></figure>
+<figure><a href="/semana-6/img/sites-page2-zoom.webp"><img src="/semana-6/img/sites-page2-zoom.webp" width="1280" height="728" loading="lazy" alt="The same Google page at 25% zoom, showing Previous and page 2 marked"></a><figcaption>Same page at 25% zoom: "Previous" and page 2 marked at the bottom. 07/11/2026 05:45</figcaption></figure>
+</div></section>
+
+<section id="hours"><h2>Four opening hours for one clinic</h2>
+<p class="pattern">The site contradicts itself, and Google Maps and the hidden listing that Google reads (JSON-LD) each say something else.</p>
+<div class="tbl"><table><tr><th>Where</th><th>Mon–Fri</th><th>Saturday</th><th>Sunday</th></tr>
+<tr><td>Site footer</td><td>8:00–13:00, 14:00–21:00</td><td>8:00–13:00</td><td>—</td></tr>
+<tr><td>Site FAQ page</td><td>9:00–13:00, 14:30–21:00</td><td>9:00–14:00</td><td>—</td></tr>
+<tr><td>Google Maps</td><td>8:00–20:00</td><td>Closed</td><td>Closed</td></tr>
+<tr><td>Hidden listing (read by Google)</td><td>9:00–17:00</td><td>9:00–17:00</td><td>9:00–17:00</td></tr></table></div>
+<div class="proofs">
+<figure><a href="/semana-6/img/hours-footer.webp"><img src="/semana-6/img/hours-footer.webp" width="1280" height="768" loading="lazy" alt="FisioPrime home page footer with opening hours"></a><figcaption>Site footer · 14/11/2026 02:43</figcaption></figure>
+<figure><a href="/semana-6/img/hours-faq.webp"><img src="/semana-6/img/hours-faq.webp" width="1278" height="684" loading="lazy" alt="FisioPrime FAQ page with opening hours"></a><figcaption>Site FAQ page · 07/11/2026 05:47</figcaption></figure>
+<figure><a href="/semana-6/img/hours-maps.webp"><img src="/semana-6/img/hours-maps.webp" width="782" height="686" loading="lazy" alt="Google Maps listing of FisioPrime Viseu with hours for each day"></a><figcaption>Google Maps listing · 07/11/2026 05:48</figcaption></figure>
+<figure><a href="/semana-6/img/hours-hidden-listing.webp"><img src="/semana-6/img/hours-hidden-listing.webp" width="1280" height="727" loading="lazy" alt="Google Rich Results Test showing openingHours Mo to Su 09:00-17:00"></a><figcaption>Google's Rich Results Test: openingHours Mo–Su 09:00–17:00 · 07/11/2026 02:47</figcaption></figure>
+</div></section>
+
+<h2 id="findings">Findings</h2>
+<section class="clinic">
+<article class="f">
+<div class="meta"><span class="n">1</span><span class="sev high">High</span><span class="cat">Consistency (local SEO)</span></div>
+<h4>Four different opening hours for the same clinic: the site contradicts itself, and both Google Maps and the hidden listing read by Google say something else</h4>
+<p><b>Evidence</b> Site footer: Mon–Fri 8:00–13:00 and 14:00–21:00; Sat 8:00–13:00 (08b, 14/11 02:43; same as in week 5, 02/11/2026). Site FAQ page: Mon–Fri 9:00–13:00 and 14:30–21:00; Sat 9:00–14:00 (08, 07/11 05:47). Google Maps listing: Mon–Fri 8:00–20:00; Sat and Sun closed (09, 05:48). Hidden listing (JSON-LD) as read by Google&#x27;s Rich Results Test: &#x27;Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00&#x27;, every day including Sunday (07, 02:47).</p>
+<p class="how"><b>How measured</b> Read the footer and the FAQ page; Google Maps → listing → hours (7 days); Rich Results Test → Local businesses → openingHours</p>
+<p><b>Price for the clinic</b> A patient who checks Google Maps believes the clinic is closed on Saturday, while the site says it opens; one who trusts the footer arrives at 8:00 on a Saturday, the FAQ says 9:00. Each mismatch is a lost or annoyed visit. How many: not measurable from outside.</p>
+<p><b>Fix idea</b> Confirm the real hours with the clinic and update, on the same day, the footer, the FAQ page, the Google Business Profile and the hidden listing (SEO plugin settings).</p></article><article class="f">
+<div class="meta"><span class="n">2</span><span class="sev high">High</span><span class="cat">Title &amp; H1</span></div>
+<h4>Neither the Google title nor the main heading says what the clinic does or where: &#x27;Criamos campeões&#x27; (We create champions) has no &#x27;fisioterapia&#x27; (physiotherapy) and no &#x27;Viseu&#x27;</h4>
+<p><b>Evidence</b> Title &#x27;Fisioprime - Criamos campeões&#x27; (29 characters); one h1, &#x27;Criamos Campeões&#x27; (Console, 01, 07/11 05:56). Search &#x27;fisioterapia Viseu&#x27; (All tab): fisioprime.pt is 11th, on page 2 (21, 05:33 and 22, 05:45). The sites around it say their service in the title: &#x27;Fisio Clínica da Ribeira - Medicina Física e de Reabilitação&#x27;, &#x27;CMV - Centros Médicos e Reabilitação&#x27;. For this search Google rewrote the grey text instead of using the meta description (21).</p>
+<p class="how"><b>How measured</b> Console quick pass; Google search in a private window, counting results without &#x27;Sponsored&#x27;; zoom 25% to show the page number</p>
+<p><b>Price for the clinic</b> Anyone searching &#x27;fisioterapia Viseu&#x27; who stays on page 1 never sees the site. The title is not proven to be the cause of the 11th place (Google uses many signals), but it is the part the owner controls in 5 minutes. Clicks lost: not measurable from outside (Search Console).</p>
+<p><b>Fix idea</b> Title like &#x27;Fisioterapia em Viseu | FisioPrime – Quinta da Alagoa&#x27; (under 60 characters); h1 with the service and the city; keep &#x27;Criamos campeões&#x27; as the slogan under it.</p></article><article class="f">
+<div class="meta"><span class="n">3</span><span class="sev med">Medium</span><span class="cat">Meta description &amp; team</span></div>
+<h4>The text Google shows under the title promises a team the site doesn&#x27;t show: &#x27;quatro Fisioterapeutas e um Nutricionista&#x27; (four physiotherapists and one nutritionist)</h4>
+<p><b>Evidence</b> Meta description (160 characters) used word for word by Google when searching &#x27;fisioprime&#x27; (11, 02:49). The site shows 4 people: 3 physiotherapists (Silvana Ferreira, Alexandra Couto, Gustavo Almeida) and 1 nutritionist (Marco Pontes) (Console h2 list; 10, 05:49). Team carousel: 5 frames, one empty with only the logo (10). Clicking Silvana Ferreira opens her profile (10b, 05:58); clicking Alexandra Couto opens nothing (10c, 05:58).</p>
+<p class="how"><b>How measured</b> Console: meta description and h2 list; Google search for the name; click test comparing a profile that opens with one that doesn&#x27;t</p>
+<p><b>Price for the clinic</b> The first sentence a future patient reads about the clinic on Google is not what the site shows: small, but it is the first impression. An empty frame and a profile that doesn&#x27;t open make the team page look unfinished.</p>
+<p><b>Fix idea</b> Rewrite the description with what is true today and an invitation to book (e.g. &#x27;Fisioterapia e nutrição em Viseu, na Quinta da Alagoa. Marque a sua avaliação: 964 413 656.&#x27;); remove the empty frame; fix Alexandra Couto&#x27;s profile link.</p></article><article class="f">
+<div class="meta"><span class="n">4</span><span class="sev med">Medium</span><span class="cat">GEO (AI answers)</span></div>
+<h4>Google&#x27;s AI answer for &#x27;fisioprime&#x27; presents a clinic in Rio de Janeiro first; the Viseu clinic only appears in passing</h4>
+<p><b>Evidence</b> AI Overview, search &#x27;fisioprime&#x27;: opens with &#x27;Fisioprime Campo Grande… Rio de Janeiro&#x27;, with its address and phone; Portugal and &#x27;FisioPrime in Viseu&#x27; only in the 2nd bullet (12, 07/11 03:14). No llms.txt (404, Console, 01). The clinic&#x27;s name is not written the same everywhere: &#x27;FisioPrime Viseu&#x27; on Google Maps (09), &#x27;Fisioprime&#x27; in the title and in the hidden listing (01, 07).</p>
+<p class="how"><b>How measured</b> Google search for the name in a private window; read the AI Overview to the end; Console: /llms.txt</p>
+<p><b>Price for the clinic</b> Someone who asks Google (or an AI assistant) about the clinic by name first gets a Brazilian clinic&#x27;s phone number. Calls or visits lost: not measurable from outside. AI answers change over time.</p>
+<p><b>Fix idea</b> Use one name everywhere (&#x27;FisioPrime Viseu&#x27;); add &#x27;Viseu&#x27; to the title, h1 and description; add an llms.txt and complete the hidden listing (city, phone, Google Maps link) so machines can tell this clinic from its namesakes.</p></article><article class="f">
+<div class="meta"><span class="n">5</span><span class="sev med">Medium</span><span class="cat">Speed (mobile)</span></div>
+<h4>On mobile the main content takes 7.1 s to appear in Google&#x27;s test, almost three times the 2.5 s &#x27;good&#x27; limit</h4>
+<p><b>Evidence</b> PageSpeed Insights, Mobile: Performance 69; Largest Contentful Paint 7.1 s; Speed Index 6.0 s; Total Blocking Time 0 ms; layout shift 0.001 (14, 07/11 03:12). Desktop: 90; LCP 1.4 s (13, 03:11). Real-user data: &#x27;No Data&#x27; (15). Measured on Google&#x27;s servers, not on my connection.</p>
+<p class="how"><b>How measured</b> pagespeed.web.dev → Mobile and Desktop tabs</p>
+<p><b>Price for the clinic</b> Most people look for a clinic on their phone; for 7 seconds they see an unfinished page. How many leave: not measurable from outside (no real-user data).</p>
+<p><b>Fix idea</b> In PageSpeed, open &#x27;Largest Contentful Paint element&#x27; to see which piece is slow (likely the hero image) and compress or resize it; the week 5 fixes for weight (WebP images, fewer style files) also apply.</p></article><article class="f">
+<div class="meta"><span class="n">6</span><span class="sev med">Medium</span><span class="cat">Trust / site hygiene</span></div>
+<h4>An English article about short-term loans, with a link to a loans website, is published on the clinic&#x27;s site since 24/02/2021 and listed in the map of pages sent to Google</h4>
+<p><b>Evidence</b> post-sitemap.xml lists 1 address, last modified 2021-02-24 (04, 07/11 03:20). The page opens with the FisioPrime menu and a link to badcreditloanmart.com (05, 03:21). Its robots setting is &#x27;index&#x27; (open to Google). A search &#x27;site:fisioprime.pt loans&#x27; returns no results (06, 03:20).</p>
+<p class="how"><b>How measured</b> Open the sitemap index and its &#x27;post&#x27; part; open the article; Google search with site:</p>
+<p><b>Price for the clinic</b> A patient or partner who lands on it would question who looks after the site. Google does not show it today for &#x27;loans&#x27;; the risk is reputation, not traffic. Raise it privately with the owner, as a question (&#x27;Did you know…?&#x27;).</p>
+<p><b>Fix idea</b> Ask the clinic (or the agency that maintains the site) to remove the article and check for other unknown pages; keep the sitemap to the clinic&#x27;s real pages.</p></article><article class="f">
+<div class="meta"><span class="n">7</span><span class="sev med">Medium</span><span class="cat">Images (alt text)</span></div>
+<h4>Almost half the images still have no text description for Google and screen readers (already reported in week 5)</h4>
+<p><b>Evidence</b> 24 of 49 images without alt text (Console, 01, 07/11 05:56). Week 5: 24 of 50 (02/11/2026).</p>
+<p class="how"><b>How measured</b> Console quick pass after scrolling to the end of the page</p>
+<p><b>Price for the clinic</b> Google Images can&#x27;t tell what the photos show, and blind visitors hear nothing; no direct loss of bookings.</p>
+<p><b>Fix idea</b> Describe every meaningful photo (team, treatments); leave decorative images empty.</p></article><article class="f">
+<div class="meta"><span class="n">8</span><span class="sev med">Medium</span><span class="cat">Local SEO (reviews)</span></div>
+<h4>Same 4.9★ as the leaders, but only 10 Google reviews: the first clinic on the map has 124</h4>
+<p><b>Evidence</b> &#x27;fisioterapia Viseu&#x27;, Places list: MoviMente Viseu 4.9★ (124), FisioPrime Viseu 4.9★ (10), Carolina Aparício 4.9★ (64) (16, 07/11 02:48; 17, 03:22).</p>
+<p class="how"><b>How measured</b> Google search &#x27;fisioterapia Viseu&#x27; in a private window; read the Places list</p>
+<p><b>Price for the clinic</b> With equal stars, a patient comparing listings trusts 124 opinions more than 10. Effect on map position: not provable from outside.</p>
+<p><b>Fix idea</b> Ask satisfied patients for a review at the last session (a QR code at reception linking to the listing).</p></article>
+<details><summary>3 dropped candidates</summary>
+<article class="f"><div class="meta"><span class="n">9</span><span class="cat">Search display · dropped</span></div>
+<h4>The sitemap pages show a red warning in the browser</h4><p><b>Why it fell</b> Red banner on sitemap_index.xml and post-sitemap.xml (03, 04). It is Microsoft Edge announcing it will stop styling this kind of file; Google reads the raw file.</p></article><article class="f"><div class="meta"><span class="n">10</span><span class="cat">Search display · dropped</span></div>
+<h4>Google shows &#x27;Translate this page&#x27; next to the site</h4><p><b>Why it fell</b> Appears because my Google interface is in English (11, 21); not a site problem.</p></article><article class="f"><div class="meta"><span class="n">11</span><span class="cat">Trust / site hygiene · dropped</span></div>
+<h4>Google shows the loans article to anyone who searches</h4><p><b>Why it fell</b> &#x27;site:fisioprime.pt loans&#x27; returned no results (06, 07/11 03:20): not proven. The article itself is kept as finding 6.</p></article>
+</details>
+<div class="strengths"><h4>Strengths</h4><ul><li>robots.txt lets search engines in and points to the sitemap (02)</li><li>Sitemap with 4 parts; the pages part was updated on 25/10/2026 (03)</li><li>A hidden listing (JSON-LD) exists and Google reads it as a Local business (07) — but with the wrong hours</li><li>One h1 on the home page; 24 internal links reach every menu page (01)</li><li>Desktop speed 90, LCP 1.4 s; no layout shift (0.006 / 0.001) and 0 ms blocking time on both (13, 14)</li><li>PageSpeed SEO 100 and Best Practices 100 (15) — the automatic test checks that the pieces exist, not that they are true</li><li>Google Maps: 2nd or 3rd for &#x27;fisioterapia Viseu&#x27; in 4 measurements, excluding the ad (16–19), 4.9★</li></ul></div>
+</section>
+
+<section id="ai"><h2>Google's text and Google's AI</h2>
+<div class="proofs">
+<figure><a href="/semana-6/img/google-name.webp"><img src="/semana-6/img/google-name.webp" width="1276" height="729" loading="lazy" alt="Google result for fisioprime with the meta description promising four physiotherapists"></a><figcaption>Search "fisioprime": Google shows the meta description word for word, including "quatro Fisioterapeutas" (four physiotherapists). 07/11/2026 02:49</figcaption></figure>
+<figure><a href="/semana-6/img/ai-overview.webp"><img src="/semana-6/img/ai-overview.webp" width="1273" height="722" loading="lazy" alt="Google AI Overview for fisioprime starting with a clinic in Rio de Janeiro"></a><figcaption>AI Overview for "fisioprime": a clinic in Rio de Janeiro first; Viseu only in passing. 07/11/2026 03:14</figcaption></figure>
+<figure><a href="/semana-6/img/pagespeed-mobile.webp"><img src="/semana-6/img/pagespeed-mobile.webp" width="1265" height="714" loading="lazy" alt="PageSpeed Insights mobile result: performance 69, Largest Contentful Paint 7.1 seconds"></a><figcaption>PageSpeed Insights, mobile: 69 · main content after 7.1 s · 07/11/2026 03:12</figcaption></figure>
+</div></section>
+
+<section id="limits"><h2>What I could not measure from outside</h2>
+<div class="lim"><ul><li>Clicks, impressions and real search terms are only in Google Search Console (owner only)</li><li>No real-user speed data (&#x27;No Data&#x27;): only Google&#x27;s lab test</li><li>Searches made from Timor-Leste in a private window; Google set the area to &#x27;Viseu, Portugal&#x27;, but a person in Viseu may see a different order</li><li>Why the site ranks 11th cannot be proven from outside: Google uses many signals</li><li>AI answers change over time; the screenshot shows 07/11/2026 only</li><li>Number of bookings lost to each finding: only the clinic knows</li></ul></div>
+<p class="pattern">Prices are given as consequences, not euros: the clinic's visits and bookings are only visible to the clinic.</p></section>
+</main>
+<footer>Rui Carmo · Week 6 deliverable · This page is not listed by search engines.</footer>
+</div>
+</body>
+</html>
