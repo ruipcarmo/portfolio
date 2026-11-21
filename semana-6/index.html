@@ -159,24 +159,28 @@ table{width:100%;border-collapse:collapse;background:var(--card);border:1px soli
 <p class="pattern">Prices are given as consequences, not euros: the clinic's visits and bookings are only visible to the clinic.</p></section>
 
 <section id="portfolio"><h2>Part 2 · My portfolio: before and after</h2>
-<p class="pattern">The same checks on portfolio-mu-indol-57.vercel.app, measured by me on 14/11/2026 in a private window, before (09:03–09:23) and after (09:55–10:17) publishing the fixes. The visible page did not change: only what Google and AI assistants read behind it.</p>
-<div class="tbl"><table><tr><th>Check</th><th>Before</th><th>After</th></tr>
-<tr><td>Google title</td><td>"Rui Carmo | Portfolio" (21 characters), says nothing about the work</td><td>"Rui Carmo | Websites and AI for businesses of every kind" (56)</td></tr>
-<tr><td>Meta description</td><td>60 characters, "learning to build with AI", out of step with the page</td><td>147 characters: what I do and the 3 websites I built</td></tr>
-<tr><td>Hidden card (JSON-LD)</td><td>None · Rich Results Test: "No items detected"</td><td>Person, WebSite, ItemList (the 3 projects) · "1 valid item detected". Valid does not mean shown: Google only displays list carousels for a few kinds of content, and only for pages on the same site, so this is not a result.</td></tr>
-<tr><td>robots.txt</td><td>404</td><td>Exists: everything open, points to the sitemap</td></tr>
-<tr><td>sitemap.xml</td><td>404</td><td>Exists: home page only (the week 5 and 6 pages stay out and keep their noindex tag)</td></tr>
-<tr><td>llms.txt (for AI assistants)</td><td>404</td><td>Exists: who I am and the 3 projects</td></tr>
-<tr><td>PageSpeed mobile · desktop</td><td>95 · 100 (SEO 100 on both)</td><td>95 · 100 (SEO 100 on both)</td></tr>
-<tr><td>Weight · load time</td><td>162 KB · 0.58 s (week 5)</td><td>164 KB · 0.80 s (middle of 3: 872, 801, 746 ms)</td></tr>
-<tr><td>Pages Google knows (site: search)</td><td>0</td><td>0 — fixed today, not yet visited by Google</td></tr>
+<p class="pattern">The same checks on portfolio-mu-indol-57.vercel.app, measured by me in a private window on 14/11/2026 (before 09:03–09:23, after the first fix 09:55–10:17) and on 21/11/2026 after my mentor's feedback (02:12–02:22). The visible page did not change: only what Google and AI assistants read behind it.</p>
+<div class="tbl"><table><tr><th>Check</th><th>Before (14/11)</th><th>After 1st fix (14/11)</th><th>After mentor feedback (21/11)</th></tr>
+<tr><td>Google title</td><td>"Rui Carmo | Portfolio" (21 characters)</td><td>"Rui Carmo | Websites and AI for businesses of every kind" (56)</td><td>Same</td></tr>
+<tr><td>Meta description</td><td>60 characters, "learning to build with AI", out of step with the page</td><td>147 characters: what I do and the 3 websites I built</td><td>Same</td></tr>
+<tr><td>Share image (WhatsApp, LinkedIn)</td><td>"Learning to build with AI, one project at a time."</td><td>Unchanged — missed</td><td>New image and alt text: "Websites and AI for businesses · Save time. Stay ahead."</td></tr>
+<tr><td>Hidden card (JSON-LD)</td><td>None · "No items detected"</td><td>Person, WebSite, ItemList · "1 valid item detected" — the project list, which Google would never show</td><td>Person (with job title and country: Portugal) and WebSite · Schema validator: 0 errors, 0 warnings. Profiles (sameAs) still to add</td></tr>
+<tr><td>robots.txt · sitemap.xml</td><td>404 · 404</td><td>Exist (sitemap: home page only; week 5 and 6 keep their noindex tag)</td><td>Same</td></tr>
+<tr><td>llms.txt (for AI assistants)</td><td>404</td><td>Who I am and the 3 projects</td><td>Adds "based in Portugal" and that I am not the Rui Carmo of taoofmac.com</td></tr>
+<tr><td>Third-party requests</td><td>Google Fonts (stylesheet + font file)</td><td>Same</td><td>None: the font file is served from my own site</td></tr>
+<tr><td>PageSpeed mobile</td><td>95</td><td>95</td><td>99 (one run) · FCP 0.8 s · LCP 1.5 s · CLS 0</td></tr>
+<tr><td>Requests · weight · load time</td><td>8 · 162 KB · 0.58 s (week 5)</td><td>8 · 164 KB · 0.80 s (middle of 872, 801, 746 ms)</td><td>7 · 163 KB · 0.43 s (middle of 430, 446, 369 ms)</td></tr>
+<tr><td>Pages Google knows (site: search)</td><td>0</td><td>0</td><td>Not re-checked</td></tr>
 </table></div>
+<p class="pattern">Load times change with the connection (Timor-Leste, home Wi-Fi, Starlink), so the drop from 0.80 s to 0.43 s is not credited to the font alone. What is certain: one request fewer, and no visitor data sent to Google. The "1 valid item" of the first fix was never a result: valid does not mean shown.</p>
 <p class="pattern">Dropped: "3 of 6 images without alt text". They are the three decorative screenshots in the hero, repeated below with full descriptions, so an empty alt is correct. The extra 2 KB is the hidden card; the time difference comes from the connection (Timor-Leste, home Wi-Fi, Starlink), not from the page. Like FisioPrime, the portfolio already scored SEO 100 with no sitemap, no robots.txt and no hidden card: the automatic score does not check for them.</p>
 <div class="proofs">
 <figure><a href="/semana-6/img/portfolio-console-before.webp"><img src="/semana-6/img/portfolio-console-before.webp" width="1280" height="768" loading="lazy" alt="Console quick pass on the portfolio before the fixes: robots, sitemap and llms.txt 404, no JSON-LD"></a><figcaption>Before · Console: robots.txt, sitemap.xml and llms.txt 404; no hidden card · 14/11/2026 09:03</figcaption></figure>
 <figure><a href="/semana-6/img/portfolio-console-after.webp"><img src="/semana-6/img/portfolio-console-after.webp" width="1280" height="768" loading="lazy" alt="Console quick pass on the portfolio after the fixes: robots, sitemap and llms.txt exist, 3 JSON-LD types"></a><figcaption>After · Console: all three files exist; 3 hidden-card types · 14/11/2026 09:55</figcaption></figure>
 <figure><a href="/semana-6/img/portfolio-rich-before.webp"><img src="/semana-6/img/portfolio-rich-before.webp" width="1280" height="768" loading="lazy" alt="Rich Results Test on the portfolio before: No items detected"></a><figcaption>Before · Rich Results Test: No items detected · 09:11</figcaption></figure>
-<figure><a href="/semana-6/img/portfolio-rich-after.webp"><img src="/semana-6/img/portfolio-rich-after.webp" width="1280" height="768" loading="lazy" alt="Rich Results Test on the portfolio after: 1 valid item detected"></a><figcaption>After · Rich Results Test: 1 valid item detected · 10:00</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-rich-after.webp"><img src="/semana-6/img/portfolio-rich-after.webp" width="1280" height="768" loading="lazy" alt="Rich Results Test on the portfolio after: 1 valid item detected"></a><figcaption>After 1st fix · Rich Results Test: 1 valid item detected (the project list, since removed) · 14/11 10:00</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-validator-r2.webp"><img src="/semana-6/img/portfolio-validator-r2.webp" width="1280" height="768" loading="lazy" alt="Schema.org validator on the portfolio: WebSite with Person as author, 0 errors, 0 warnings"></a><figcaption>After mentor feedback · Schema validator: 0 errors, 0 warnings · 21/11/2026 02:18</figcaption></figure>
+<figure><a href="/semana-6/img/portfolio-pagespeed-r2.webp"><img src="/semana-6/img/portfolio-pagespeed-r2.webp" width="1280" height="768" loading="lazy" alt="PageSpeed Insights mobile for the portfolio: Performance 99, the other three scores 100"></a><figcaption>After mentor feedback · PageSpeed mobile 99 · 21/11/2026 02:21</figcaption></figure>
 </div>
 <p class="pattern">Next step, as the owner: register the portfolio in Google Search Console and submit the sitemap, so Google visits it sooner.</p></section>
 </main>
