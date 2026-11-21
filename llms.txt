@@ -1,6 +1,8 @@
 # Rui Carmo
 
-> PE teacher since 1996, now building an agency that helps businesses of every kind save time and work smarter with AI. This portfolio shows the websites I have built so far.
+> PE teacher since 1996, now building an agency that helps businesses save time and work smarter with AI. Based in Portugal and working with businesses in Portugal. This portfolio shows the websites I have built so far.
+
+Not to be confused with the Rui Carmo who writes the technology blog taoofmac.com: a different person.
 
 ## Projects
 
